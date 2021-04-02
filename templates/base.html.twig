@@ -2,18 +2,81 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="autor" content="DJIBRIL BADJI, Pierre, Sabrina, Alexandre">
+        <meta name="description" content="Site E-commerce">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css" />
+        <title> Freebird - {% block title %}Base - principale{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
+
+        
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+        
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+
         {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
+        
+
+
+
+
+
+    <footer>
+                    <section class="container-fluid">
+                        <div row>
+                            <div class="col-4">
+                                
+                                   
+                                    
+                                    
+                                
+                                
+                            </div>
+                            <div class="col-4">
+                                <div>
+                                    <img src="" alt="" srcset="">
+                                </div>
+
+                            </div>
+                            <div class="col-4">
+                                <h5>Réseaux sociaux</h5>
+                                <div class="dropdown-divider"></div>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-12 test-center">
+                                    <p>Mentions légales- CGV politique de confidentialité</p>
+                                    <p>Copyright © 2021-Freebird</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </section>
+    </footer>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+        <script src="https://kit.fontawesome.com/c28c69092d.js" crossorigin="anonymous"></script>
+        <script>
+        $(document).ready(function(){
+            bsCustomFileInput.init()
+        })
+        </script>
+
     </body>
 </html>
