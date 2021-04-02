@@ -10,6 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
+<<<<<<< HEAD
 require __DIR__.'/Container7Ly9w5W/App_KernelDevDebugContainer.php';
 require __DIR__.'/Container7Ly9w5W/EntityManager_9a5be93.php';
 require __DIR__.'/Container7Ly9w5W/getWebProfiler_Controller_RouterService.php';
@@ -112,6 +113,109 @@ require __DIR__.'/Container7Ly9w5W/get_Container_Private_Form_Type_FileService.p
 require __DIR__.'/Container7Ly9w5W/get_Container_Private_Form_FactoryService.php';
 require __DIR__.'/Container7Ly9w5W/get_Container_Private_FilesystemService.php';
 require __DIR__.'/Container7Ly9w5W/get_Container_Private_CacheClearerService.php';
+=======
+require __DIR__.'/ContainerFfSXPuZ/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerFfSXPuZ/EntityManager_9a5be93.php';
+require __DIR__.'/ContainerFfSXPuZ/getWebProfiler_Controller_RouterService.php';
+require __DIR__.'/ContainerFfSXPuZ/getWebProfiler_Controller_ProfilerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getWebProfiler_Controller_ExceptionPanelService.php';
+require __DIR__.'/ContainerFfSXPuZ/getValidator_NotCompromisedPasswordService.php';
+require __DIR__.'/ContainerFfSXPuZ/getValidator_ExpressionService.php';
+require __DIR__.'/ContainerFfSXPuZ/getValidator_EmailService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTwig_Runtime_SecurityCsrfService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTwig_Runtime_HttpkernelService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTwig_Mailer_MessageListenerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTwig_Form_RendererService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_YmlService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_XliffService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_ResService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_QtService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_PoService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_PhpService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_MoService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_JsonService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_IniService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_DatService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTranslation_Loader_CsvService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSession_Storage_NativeService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSessionService.php';
+require __DIR__.'/ContainerFfSXPuZ/getServicesResetterService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSerializer_Mapping_CacheClassMetadataFactoryService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_Validator_UserPasswordService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_User_Provider_Concrete_AppUserProviderService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_PasswordEncoderService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_Logout_Listener_CsrfTokenClearingService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_Firewall_Map_Context_MainService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_Firewall_Map_Context_DevService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_EncoderFactory_GenericService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_Csrf_TokenStorageService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_ContextListener_0Service.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_ChannelListenerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_Authentication_Listener_Anonymous_MainService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecurity_AccessListenerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getSecrets_VaultService.php';
+require __DIR__.'/ContainerFfSXPuZ/getRouting_LoaderService.php';
+require __DIR__.'/ContainerFfSXPuZ/getPropertyInfo_SerializerExtractorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getPropertyAccessorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getMonolog_Logger_SecurityService.php';
+require __DIR__.'/ContainerFfSXPuZ/getMimeTypesService.php';
+require __DIR__.'/ContainerFfSXPuZ/getFragment_Renderer_InlineService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeGuesser_ValidatorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeGuesser_DoctrineService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeExtension_Upload_ValidatorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeExtension_Form_ValidatorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeExtension_Form_TransformationFailureHandlingService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeExtension_Form_HttpFoundationService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeExtension_Form_DataCollectorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_TypeExtension_CsrfService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_Type_FormService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_Type_EntityService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_Type_ColorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_Type_ChoiceService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_ServerParamsService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_RegistryService.php';
+require __DIR__.'/ContainerFfSXPuZ/getForm_ChoiceListFactory_CachedService.php';
+require __DIR__.'/ContainerFfSXPuZ/getErrorHandler_ErrorRenderer_HtmlService.php';
+require __DIR__.'/ContainerFfSXPuZ/getErrorControllerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDoctrine_UlidGeneratorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDoctrine_Orm_Validator_UniqueService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDoctrine_Orm_Listeners_PdoCacheAdapterDoctrineSchemaSubscriberService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDoctrine_Orm_DefaultListeners_AttachEntityListenersService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDoctrine_Orm_DefaultEntityManager_PropertyInfoExtractorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_Security_Voter_VoteListenerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_Security_Voter_Security_Access_SimpleRoleVoterService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_Security_Voter_Security_Access_ExpressionVoterService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_Security_Voter_Security_Access_AuthenticatedVoterService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_Security_UserValueResolverService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_FileLinkFormatter_UrlFormatService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_VariadicService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_SessionService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_ServiceService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_RequestAttributeService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_RequestService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_NotTaggedControllerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDebug_ArgumentResolver_DefaultService.php';
+require __DIR__.'/ContainerFfSXPuZ/getDataCollector_Request_SessionCollectorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getContainer_GetenvService.php';
+require __DIR__.'/ContainerFfSXPuZ/getContainer_EnvVarProcessorsLocatorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getContainer_EnvVarProcessorService.php';
+require __DIR__.'/ContainerFfSXPuZ/getCache_SystemClearerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getCache_GlobalClearerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getCache_AppClearerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getTemplateControllerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getRedirectControllerService.php';
+require __DIR__.'/ContainerFfSXPuZ/getUserRepositoryService.php';
+require __DIR__.'/ContainerFfSXPuZ/getProductRepositoryService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_ServiceLocator_YxNo8ZPService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_ServiceLocator_KfwZsneService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_ServiceLocator_KfbR3DYService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_Container_Private_SerializerService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_Container_Private_Security_Csrf_TokenManagerService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_Container_Private_Form_Type_FileService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_Container_Private_Form_FactoryService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_Container_Private_FilesystemService.php';
+require __DIR__.'/ContainerFfSXPuZ/get_Container_Private_CacheClearerService.php';
+>>>>>>> 5085d8bd26d05fd957697ee818f531f0823619bc
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -199,7 +303,10 @@ $classes[] = 'Symfony\Contracts\HttpClient\HttpClientInterface';
 $classes[] = 'Symfony\Component\HttpClient\HttpClient';
 $classes[] = 'Symfony\Bridge\Monolog\Logger';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
+<<<<<<< HEAD
 $classes[] = 'App\Controller\HomeController';
+=======
+>>>>>>> 5085d8bd26d05fd957697ee818f531f0823619bc
 $classes[] = 'App\Repository\ProductRepository';
 $classes[] = 'App\Repository\UserRepository';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';
@@ -322,7 +429,10 @@ $classes[] = 'Symfony\Bridge\Monolog\Handler\ConsoleHandler';
 $classes[] = 'Monolog\Handler\StreamHandler';
 $classes[] = 'Monolog\Processor\PsrLogMessageProcessor';
 $classes[] = 'Symfony\Component\Notifier\EventListener\NotificationLoggerListener';
+<<<<<<< HEAD
 $classes[] = 'Symfony\Component\DependencyInjection\ParameterBag\ContainerBag';
+=======
+>>>>>>> 5085d8bd26d05fd957697ee818f531f0823619bc
 $classes[] = 'Symfony\Component\HttpKernel\Profiler\Profiler';
 $classes[] = 'Symfony\Component\HttpKernel\Profiler\FileProfilerStorage';
 $classes[] = 'Symfony\Component\HttpKernel\DataCollector\TimeDataCollector';
@@ -350,6 +460,10 @@ $classes[] = 'Symfony\Component\PropertyInfo\Extractor\SerializerExtractor';
 $classes[] = 'Symfony\Component\HttpFoundation\RequestStack';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\ResponseListener';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Routing\Router';
+<<<<<<< HEAD
+=======
+$classes[] = 'Symfony\Component\DependencyInjection\ParameterBag\ContainerBag';
+>>>>>>> 5085d8bd26d05fd957697ee818f531f0823619bc
 $classes[] = 'Symfony\Component\Routing\Matcher\ExpressionLanguageProvider';
 $classes[] = 'Symfony\Component\Routing\RequestContext';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\RouterListener';

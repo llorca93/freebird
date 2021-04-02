@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
+
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta name="autor" content="DJIBRIL BADJI, Pierre, Sabrina, Alexandre">
         <meta name="description" content="Site E-commerce">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css" />
-        <title> Freebird - {% block title %}Base - principale{% endblock %}</title>
+        {% block title %} <title> Freebird -Base - principale</title> {% endblock %}
         <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
 
         
@@ -15,12 +15,13 @@
         
         {% endblock %}
 
-        {% block javascripts %}
+        
 
-        {% endblock %}
+        
     </head>
     <body>
         {% block body %}{% endblock %}
+
         
 
 
@@ -77,6 +78,9 @@
             bsCustomFileInput.init()
         })
         </script>
+        {% block javascript %}{% endblock %}
 
+
+  
     </body>
 </html>
