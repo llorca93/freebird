@@ -19,8 +19,46 @@
 
 }
 #id-reseaux a{
-    font-size: 30px;
+    font-size: 35px;
     padding: 5px;
+    
 }
+/*------------------------------------------------------ header base home------------------------------------------------------------*/
+#id-input{
+    height: 25px;
+}
+#id-user{
+    font-size: 25px;
+    color: #444444;
+}
+#id-panier{
+    font-size:25px ;
+    color: #444444;
+}
+#id-recherche{
+    font-size: 25px;
+    color: #444444;
+}
+.nav-header> a{
+    margin: 0px 10px 0px 10px ;
+    padding: 0px 10px 0px 10px;
+    color:black;
+    text-decoration: none;
+    
 
+}
+.nav-header> a:hover{
+    background-color:#444444 ;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 10px 0px 10px;
+    color: white;
+    text-decoration: none;
+    
+}
+.nav-header{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+}
 

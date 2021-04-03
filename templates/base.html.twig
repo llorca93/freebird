@@ -20,7 +20,38 @@
         
     </head>
     <body>
+        <header class="container-fluid">
+    
+            <div class="row">
+                    <div class="col-12 text-right  ">
+                        <a href="#"> <i class="fas fa-user" id="id-user"></i></a>
+                        <a href="#"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
+                        <input type="search" name="recherche" id="id-input" placeholder="recherce" class="text-center ">
+                        <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
+                    </div>
+                    <br>
+            
+
+            
+                    <div class="col-4">
+                            <img src="{{asset('')}}" alt="logo freebird">
+                    </div> 
+                    <div class="col-8 text-right " >
+                        <nav class="nav-header " >
+                            <a href="#">Accueil</a>
+                            <a href="#">Découverte</a>
+                            <a href="#">Boutique</a>
+                            <a href="#">Contact</a>
+
+                        </nav>
+                    </div>      
+                  
+            </div>
+        </header>
+
+
         {% block body %}{% endblock %}
+        
 
         
 
@@ -63,13 +94,15 @@
 
                             </div>
                             <div class="col-4 p-3" id="id-reseaux">
-                                <h4 class="">Réseaux sociaux</h4>
-                                <p>Vous pouvez nous rejoindre sur nos différents réseaux <br> sociaux pour partagez plus d'experiences et le qotidiens de toute la Team Freebird</p>
-                                <div class="dropdown-divider"></div>
-                                <a href=""> <i class="fab fa-facebook-square "></i></a>
-                                <a href=""> <i class="fab fa-instagram-square"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-linkedin"></i></a>
+                                    <div class="dropdown-divider"></div>
+                                    <h4 class="">Réseaux sociaux</h4>
+                                    <p>Vous pouvez nous joindre sur nos différents réseaux <br> sociaux pour partagez plus d'experiences et le qotidiens de toute la Team Freebird</p>
+                                <div class="col-12 text-center">
+                                    <a href=""> <i class="fab fa-facebook-square "></i></a>
+                                    <a href=""> <i class="fab fa-instagram-square"></i></a>
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-linkedin"></i></a>
+                                </div>
                            </div>
                             
                                 <div class="col-12 text-center">
