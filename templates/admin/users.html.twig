@@ -1,0 +1,38 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}admin_users{% endblock %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Civilité</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Email</th>                
+                <th scope="col">Adresse</th>
+                <th scope="col">Ville</th>
+                <th scope="col">Code postal</th>
+                <th scope="col">Date de naissance</th>
+            </tr>
+        </thead>
+        
+        <tbody>           
+            {% for customer in customers %}                           
+                <tr>
+                    <td scope="row">{{ customer.id }}</td>
+                    <td>{{ customer.gender }}</td>
+                    <td>{{ customer.lastName }}</td>
+                    <td>{{ customer.firstName }}</td>
+                    <td>{{ customer.email }}</td>
+                    <td>{{ customer.address }}</td>
+                    <td>{{ customer.city }}</td>
+                    <td>{{ customer.zipCode }}</td>
+                    <td>{{ customer.dob.format('d/m/Y') }}</td>
+                </tr>          
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
