@@ -74,3 +74,26 @@ footer a{
 
 }
 
+/*********************users.html.twig*************************/
+thead tr{
+    background: linear-gradient(45deg,rgb(161 231 240),rgb(3 200 244) );
+    color: white;
+}
+
+.voirUser{
+    margin-top: 10px;
+    text-align: right;
+}
+.voirUser>a{
+    padding: 10px;
+    color: white;
+    background-color: rgb(3 200 244);
+    text-align: right;
+    border-radius: 5px;
+}
+.voirUser>a:hover{
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-black);
+    
+}
