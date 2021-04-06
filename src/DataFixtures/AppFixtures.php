@@ -14,7 +14,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-         $category = new Category();
+        // $category = new Category();
          $product = new Product();
          $product->setName('Parapente Advance Alpha 6');
          $product->setPrice(2900);
@@ -22,7 +22,7 @@ class AppFixtures extends Fixture
          $product->setImg2('para1-2.jpg');
          $product->setImg3('para1-3.jpg');
          $product->setDescription(' Parapente Advance alpha 6 homologué EN A parfait pour débuter et progresser en sécurité');
-         $product->setCategory($category);
+         $product->setCategory(1);
          $manager->persist($product); 
          $manager->flush();
         // $category = new Category();
@@ -31,9 +31,9 @@ class AppFixtures extends Fixture
         // $manager->flush();
         
 
-        $faker = Faker\Factory::create();
+       // $faker = Faker\Factory::create();
 
-        for ($i=1; $i<6; $i++){
+       /* for ($i=1; $i<6; $i++){
           $customer = new User ();
           $customer->setEmail($faker->email());
           $customer->setPassword($faker->text(15));
@@ -47,7 +47,8 @@ class AppFixtures extends Fixture
 
           $manager->persist($customer);
           $manager->flush();
+          
 
-        }
+        }*/
     }
 }
