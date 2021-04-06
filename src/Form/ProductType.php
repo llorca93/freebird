@@ -94,9 +94,7 @@ class ProductType extends AbstractType
             ])
             ->add('category', EntityType::class, [
                 'class' => Category::class,
-                'choice_label' => 'name',
-                'expanded' => true,
-                'multiple' => true
+                'choice_label' => 'name'
             ])
             ->add('valider', SubmitType::class)
         ;
