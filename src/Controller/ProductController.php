@@ -58,7 +58,7 @@ class ProductController extends AbstractController
                      $extensionImg3 = $infoImg3->guessExtension(); 
                      $nomImg3 = time() . '-3.' . $extensionImg3; 
                      $infoImg3->move($this->getParameter('dossier_photos_products'), $nomImg3); 
-                     $product->setImg2($nomImg3); 
+                     $product->setImg3($nomImg3); 
                  } else {
  
                      $product->setImg3(null); 
@@ -70,7 +70,7 @@ class ProductController extends AbstractController
                  $manager = $this->getDoctrine()->getManager();
                  $manager->persist($product); 
                  $manager->flush(); 
-                 $this->addFlash('success','Le produit a bien été ajoutée');
+                 $this->addFlash('success','Le produit a bien été ajouté');
                  
              } else {
                  $this->addFlash('danger', 'Une erreur est survenue lors de l\'ajout du produit');
