@@ -20,7 +20,38 @@
         
     </head>
     <body>
+        <header class="container-fluid">
+    
+            <div class="row">
+                    <div class="col-12 text-right  " id="id-nav-bar">
+                        <a href="#" > <i class="fas fa-user" id="id-user"> </i></a>
+                        <a href="#"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
+                        <input type="search" name="recherche" id="id-input" placeholder="recherce" class="text-center ">
+                        <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
+                    </div>
+                    <br>
+            
+
+            
+                    <div class="col-4">
+                            <img src="{{ asset('images/logo/logo.png')}}" alt="logo freebird">
+                    </div> 
+                    <div class="col-8 text-right " >
+                        <nav class="nav-header " >
+                            <a href="#">Accueil</a>
+                            <a href="#">Découverte</a>
+                            <a href="#">Boutique</a>
+                            <a href="#">Contact</a>
+
+                        </nav>
+                    </div>      
+                  
+            </div>
+        </header>
+
+
         {% block body %}{% endblock %}
+        
 
         
 

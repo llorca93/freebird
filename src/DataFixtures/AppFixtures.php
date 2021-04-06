@@ -2,6 +2,9 @@
 
 namespace App\DataFixtures;
 
+use Faker;
+use Faker\Factory;
+use App\Entity\User;
 use App\Entity\Product;
 use App\Entity\Category;
 use Doctrine\Persistence\ObjectManager;
@@ -27,5 +30,24 @@ class AppFixtures extends Fixture
         // $manager->persist($category);
         // $manager->flush();
         
+
+        $faker = Faker\Factory::create();
+
+        for ($i=1; $i<6; $i++){
+          $customer = new User ();
+          $customer->setEmail($faker->email());
+          $customer->setPassword($faker->text(15));
+          $customer->setLastName($faker->name());
+          $customer->setFirstName($faker->name());
+          $customer->setGender($faker->text(40));
+          $customer->setAddress($faker->address());
+          $customer->setCity($faker->city());
+          $customer->setZipCode($faker->numberBetween(10000,99999));
+          $customer->setDob($faker->dateTime());
+
+          $manager->persist($customer);
+          $manager->flush();
+
+        }
     }
 }
