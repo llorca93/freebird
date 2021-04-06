@@ -10,7 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
-    #[Route('/admin/users', name: 'admin_users')]
+    /**
+     * @Route("/admin/users", name="admin_users")
+     */
     public function index(UserRepository $userRepository): Response
     {
         $customers = $userRepository->findAll();
