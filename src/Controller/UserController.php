@@ -22,17 +22,6 @@ class UserController extends AbstractController
             'customers' => $customers,
         ]);
     }
-    
-    // /**
-    //  * @Route("/admin/users/-{id}", name="admin_users_id")
-    //  */
-    // public function showOneCustomer(UserRepository $userRepository, $id, Request $request): Response
-    // {
-    //     $customer = $UserRepository->find($id);
-    //     return $this->render("admin/users.html.twig" . $id, [
-    //         'customer' => $customer,
-    //     ]);
-    // }
 
     /**
      * @Route ("/admin/users/update-{id}", name="admin_user_update")
@@ -55,6 +44,20 @@ class UserController extends AbstractController
         return $this->render('admin/userForm.html.twig', [
             'userForm' => $form->createView()
         ]);
+    }
+
+
+    /**
+     * @Route("/admin/users/delete-{id}", name="admin_user_delete")
+     */
+    public function deleteCustomer (UserRepository $userRepository, $id)
+    {
+        $customer = $userRepository->find($id);
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($customer);
+        $manager->flush();
+        $this->addFlash('success', 'L\'utilisateur a bien été supprimé');
+        return $this->redirectToRoute('admin_users');
     }
 }
 

@@ -35,17 +35,15 @@
                     <td>{{ customer.dob.format('d/m/Y') }}</td>
                     <td>{{ customer.roles|join (' + ')|lower }}</td>
                     <td>
-                       <a href="{{ path('admin_user_update', {'id':1}) }}"><i class="fas fa-user-edit"></i></a>
-                        <a href=""><i class="fas fa-trash"></i></a>
+                       <a href="{{ path('admin_user_update', {'id':customer.id}) }}"><i class="fas fa-user-edit"></i></a>
+                        <a href="{{ path('admin_user_delete', {'id':customer.id}) }}"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr> 
                          
             {% endfor %}
         </tbody>
     </table>
-    <div class="voirUser">
-        <a href="{{ path('admin_users')}}">Voir tout</a>
-    </div>
+   
 
  
 
