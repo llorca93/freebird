@@ -15,13 +15,16 @@
                 <th scope="col">Ville</th>
                 <th scope="col">Code postal</th>
                 <th scope="col">Date de naissance</th>
+                <th scope="col">Roles</th>
+                <th scope="col">Action</th>
+
             </tr>
         </thead>
-        
+
         <tbody>           
             {% for customer in customers %}                           
                 <tr>
-                    <td scope="row">{{ customer.id }}</td>
+                    <td scope="row"> {{ customer.id }}</td>
                     <td>{{ customer.gender }}</td>
                     <td>{{ customer.lastName }}</td>
                     <td>{{ customer.firstName }}</td>
@@ -30,9 +33,20 @@
                     <td>{{ customer.city }}</td>
                     <td>{{ customer.zipCode }}</td>
                     <td>{{ customer.dob.format('d/m/Y') }}</td>
-                </tr>          
+                    <td>{{ customer.roles|join (' + ')|lower }}</td>
+                    <td>
+                       <a href="{{ path('admin_user_update', {'id':1}) }}"><i class="fas fa-user-edit"></i></a>
+                        <a href=""><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr> 
+                         
             {% endfor %}
         </tbody>
     </table>
+    <div class="voirUser">
+        <a href="{{ path('admin_users')}}">Voir tout</a>
+    </div>
+
+ 
 
 {% endblock %}
