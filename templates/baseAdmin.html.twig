@@ -33,6 +33,13 @@
                     </ul>
                 </nav>
                 <div class="col-10 p-5">
+                    <div class="col-11 p-5">
+                        {% for label, messages in app.flashes %}
+                          {% for message in messages %}
+                          <div class="flash-{{ label }} bg-{{ label }} text-light p3 mb-3 rounded">{{message}}</div>
+                          {% endfor %}
+                        {% endfor %}
+                      </div>
                    {% block body %}{% endblock %} 
                 </div>
             </div>           
