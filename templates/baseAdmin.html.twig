@@ -26,13 +26,20 @@
                 <nav class="col-2">
                     <ul>
                        <li ><a href="{{ path('admin')}}"><i class="fas fa-laptop"></i>Accueil</a></li>
-                       <li> <a href="#"><i class="fas fa-store"></i>Boutique</a></li>
+                       <li> <a href="{{ path('admin_product')}}"><i class="fas fa-store"></i>Produits</a></li>
                        <li><a href="{{ path('admin_users')}}"><i class="fas fa-users"></i>Clients</a></li>
-                       <li><a href="#"> <i class="fas fa-cube"></i>Commandes</a></li>
+                       <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
                        <li><a href="#"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
                 <div class="col-10 p-5">
+                    <div class="col-11 p-5">
+                        {% for label, messages in app.flashes %}
+                          {% for message in messages %}
+                          <div class="flash-{{ label }} bg-{{ label }} text-light p3 mb-3 rounded">{{message}}</div>
+                          {% endfor %}
+                        {% endfor %}
+                      </div>
                    {% block body %}{% endblock %} 
                 </div>
             </div>           

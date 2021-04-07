@@ -74,3 +74,14 @@ footer a{
 
 }
 
+/******************** TABLE **************************/
+
+table img {
+    width: 100px;
+  }
+
+/*********************users.html.twig*************************/
+thead tr{
+    background: linear-gradient(45deg,rgb(161 231 240),rgb(3 200 244) );
+    color: white;
+}
