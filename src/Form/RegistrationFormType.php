@@ -5,20 +5,22 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\IsTrue;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
-class UserType extends AbstractType
+class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-
             ->add('gender', ChoiceType::class, [
                 'choices' => [
                     'homme'=>'Homme',
@@ -28,7 +30,7 @@ class UserType extends AbstractType
                 'multiple'=>false,
                 'expanded'=>true,
                 'label'=> 'Civilité'
-               
+            
             ])
 
             ->add('last_name', TextType::class,[
@@ -36,7 +38,7 @@ class UserType extends AbstractType
                 'label'=> 'Nom',           
                 'attr' =>[
                 'placeholder' => 'Doe'
-                 ]
+                ]
 
             ] )           
 
@@ -48,11 +50,30 @@ class UserType extends AbstractType
                 ]
             ])
 
-            ->add('email', EmailType::class, [
-                'required' =>true,
-                'attr'=>[
-                    'placeholder'=> 'prenom.nom@domaine.com'
-                ]
+            ->add('email')
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
+            ])
+            ->add('plainPassword', PasswordType::class, [
+                // instead of being set onto the object directly,
+                // this is read and encoded in the controller
+                'mapped' => false,
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Please enter a password',
+                    ]),
+                    new Length([
+                        'min' => 6,
+                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 4096,
+                    ]),
+                ],
             ])
 
             ->add('dob', BirthdayType::class, [
@@ -88,23 +109,8 @@ class UserType extends AbstractType
                     'max'=>99999,
                 ]
 
-            ] )
-
-            ->add('roles', ChoiceType::class, [
-                'required' => false,
-                'multiple' => true,
-                'expanded' =>true, 
-                'choices' => [
-                    'super_admin' => 'ROLE_SUPER_ADMIN',
-                    'administrateur' => 'ROLE_ADMIN',
-                    'utilisateur' => 'ROLE_USER'
-                ]
-            ] )
-
-                      
-            ->add('valider', SubmitType::class)
+            ]);
         
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
