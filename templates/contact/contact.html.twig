@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<header class="container-fluid p-5 text-center ">
+    <h1> FREEBIRD - CONTACT</h1>
+    <p class="text-dark">Vous pouvez nous contacter par email via cette page nous vous répondrons sur les meilleurs délais.</p>
+  </header>
+         
+           {<div class="col-4 text-center" >
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="flash-{{ label }} bg-{{ label }} p-3 text-light mb-3">{{ message }}</div>
+                    {% endfor %}
+                {% endfor %}
+            
+            </div>
+
+  <section class="container-fluid py-5" id="id-main-page-contact">
+   
+    {{ form_start(contactForm) }}
+    
+        <div class="row">
+            
+
+        
+           
+            <div class="col-2 offset-2 mb-3 text-secondary " >
+                {{  form_label(contactForm.nom) }}
+                {{ form_widget(contactForm.nom) }}
+                {{ form_help(contactForm.nom) }}
+                {{ form_errors(contactForm.nom) }}
+            </div>
+
+            <div class="col-2 mb-3 text-secondary" >
+                {{ form_label(contactForm.prenom) }}
+                {{ form_widget(contactForm.prenom) }}
+            </div>
+
+            <div class="col-6 offset-2 mb-3 text-secondary">
+                {{ form_label(contactForm.email) }}
+                {{ form_widget(contactForm.email) }}
+            </div>
+
+            <div class="col-6 offset-2 mb-3 text-secondary">
+                {{ form_label(contactForm.objet) }}
+                {{ form_widget(contactForm.objet) }}
+            </div>
+
+            <div class="col-6 offset-2 mb-3 text-secondary">
+                {{ form_label(contactForm.message) }}
+                {{ form_widget(contactForm.message) }}
+            </div>
+
+            <div class="col-6 offset-2 mb-3 text-secondary">
+                {{ form_label(contactForm.fichier) }}
+                {{ form_widget(contactForm.fichier) }}
+            </div>
+            <br>
+            <div class="col-6 offset-2 text-center mb-3 ">
+                {{ form_widget(contactForm.envoyer) }}
+            </div>
+
+        </div>
+
+    {{ form_end(contactForm) }}
+    <div class="" id="donnes">
+        <div>
+            
+        </div>
+    </div>
+  </section>
+
+{% endblock %}
