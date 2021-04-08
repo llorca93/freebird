@@ -1,6 +1,6 @@
 {% extends 'baseAdmin.html.twig' %}
 
-{% block title %}admin_orders{% endblock %}
+{% block title %}admin_category{% endblock %}
 
 {% block body %} 
 
@@ -11,17 +11,15 @@
       <thead>
           <tr>
               <th>N°</th>
-              <th>Client</th>
-              <th>Produit commandé</th>
+              <th>Nom</th>
               <th>Actions</th>
           </tr>
       </thead>
       <tbody>
-          {% for order in orders %}
+          {% for category in categories %} 
               <tr>
                   <td class="align-middle">{{ loop.index }}</td>
-                  <td class="align-middle">{{ order.user }}</td>
-                  <td class="align-middle">{{ order.productOrders }}</td>
+                  <td class="align-middle">{{ category.name }}</td>
                   <td class="align-middle">
                       <a href=""><i class="fas fa-pen-square"></i></a>
                       <a href=""><i class="fas fa-trash-alt"></i></a>
@@ -31,7 +29,7 @@
       </tbody>
   </table>
   <div class="text-right my-5">
-      <a href="" class="btn btn-outline-dark">Ajouter une commande</a>
+      <a href="{{ path('admin_category_create') }}" class="btn btn-outline-dark">Ajouter une catégorie</a>
   </div>
 </div>
 {% endblock %}

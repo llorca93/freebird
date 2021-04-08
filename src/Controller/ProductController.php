@@ -65,13 +65,28 @@ class ProductController extends AbstractController
          
          if ($form->isSubmitted()) {
              if ($form->isValid()) {
-                 $infoImg1 = $form['img1']->getData(); 
-                 $extensionImg1 = $infoImg1->guessExtension(); 
-                 $nomImg1 = time() . '-1.' . $extensionImg1; 
-                 $infoImg1->move($this->getParameter('dossier_photos_products'), $nomImg1); 
-                 $product->setImg1($nomImg1); 
+
+                $infoImg1 = $form['img1']->getData();
+                $nomOldImg1 = $product->getImg1();
+                if ($infoImg1 !== null) {
+    
+                    $cheminImg1 = $this->getParameter('dossier_photos_products') . '/' . $nomOldImg1;
+    
+                    if (file_exists($cheminImg1)) {
+                        unlink($cheminImg1);
+                    }
+                    $extensionImg1 = $infoImg1->guessExtension(); 
+                    $nomImg1 = time() . '-1.' . $extensionImg1; 
+                    $infoImg1->move($this->getParameter('dossier_photos_products'), $nomImg1); 
+                    $product->setImg1($nomImg1); 
+                } else {
+                    $product->setImg1($nomOldImg1);
+    
+    
+                }
                  
                  $infoImg2 = $form['img2']->getData(); 
+                 $nomOldImg2 = $product->getImg2();
                  if ($infoImg2 !== null) {
                      $extensionImg2 = $infoImg2->guessExtension(); 
                      $nomImg2 = time() . '-2.' . $extensionImg2; 
@@ -79,10 +94,12 @@ class ProductController extends AbstractController
                      $product->setImg2($nomImg2); 
                  } else {
  
-                     $product->setImg2(null); 
+                     $product->setImg2($nomOldImg2); 
                  }
 
-                 $infoImg3 = $form['img3']->getData(); 
+                 $infoImg3 = $form['img3']->getData();
+                 $nomOldImg3 = $product->getImg3();
+
                  if ($infoImg3 !== null) {
                      $extensionImg3 = $infoImg3->guessExtension(); 
                      $nomImg3 = time() . '-3.' . $extensionImg3; 
@@ -90,7 +107,7 @@ class ProductController extends AbstractController
                      $product->setImg3($nomImg3); 
                  } else {
  
-                     $product->setImg3(null); 
+                     $product->setImg3($nomOldImg3); 
                  }
 
 

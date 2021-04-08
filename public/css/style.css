@@ -129,3 +129,16 @@
     color: #fff;
     background-color: #c13c0d;
   }
+/*-------------------------------------------------------------------main page contact --------------------------------------------------------------*/
+#id-main-page-contact{
+    background-image: url("../images/para-for-form.jpg") ;
+    display: flex;
+    flex-direction: row;
+
+}
+#donnes{
+    height: 600px;
+    width: 500px;
+    background-color:#444444fa;
+}
+
