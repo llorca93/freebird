@@ -1,0 +1,26 @@
+main{
+   background-image: url( '../images/register-background-1.jpg');
+   background-size: 100% auto;
+   background-repeat: no-repeat;
+  
+}
+
+.card{
+    margin: 40px 0;
+    background: linear-gradient(45deg, black, transparent);
+    color: white;
+    font-weight: 600;
+  
+}
+
+.card button{
+    color: white;
+    font-weight: 600;
+    background-color: #5e9dd0;
+
+}
+
+.card button:hover{
+    background-color: tomato;
+    transition: 0.5s;
+}
