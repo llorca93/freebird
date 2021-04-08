@@ -1,28 +1,80 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
+{% block stylesheets %}
+   <link rel="stylesheet" href="{{ asset('css/styleRegister.css')}}">
+{% endblock %}
 
 {% block body %}
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1 class="text-center">S'inscrire</h1>
-    
-<div class="container">
-    {{ form_start(registrationForm) }}
-    
-        <div class="form-group">{{ form_row(registrationForm.email) }}</div>
-
-        <div class="col-5  ">
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe',
+       
             
-        }) }}</div>
+    <main>
+        <div  id="register-form" class="container input-group-prepend"> 
+                     
+            <div class="card col-6"> 
+                <div class="card-body">
+                    <h2 class="text-center mt-4">S'inscrire</h2> 
+                    {{ form_start(registrationForm) }} 
+                        {{ form_row(registrationForm.gender, {
+                            label: 'Civilité'
+                        }) }}                 
+                
+                        <div class="row form-group">
+                            <div class="col-6">
+                                {{ form_row(registrationForm.last_name, {
+                                    label: 'Nom'
+                                }) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(registrationForm.first_name, {
+                                    label: 'Prénom'
+                                }) }}
+                            </div>
+                        </div>                       
+                        <div class="form-group row">   
+                            <div class="col-6">
+                                {{ form_row(registrationForm.email) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(registrationForm.plainPassword, {
+                                label: 'Password'}) }}
+                            </div>                        
+                        </div>  
 
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-</div>
+                        {{ form_row(registrationForm.dob, {
+                        label: 'Date de naissance'
+                        }) }}
+                        <div class="form-group row" >
+                            <div class="col-6">
+                                {{ form_row(registrationForm.address, {
+                                    label: 'Adresse'
+                                }) }}
+                            </div>
+                            <div class="col-3">
+                                {{ form_row(registrationForm.city, {
+                                    label: 'Ville'
+                                }) }}
+                            </div>
+                            <div class="col-3">
+                                {{ form_row(registrationForm.zip_code, {
+                                    label: 'Code postal'
+                                }) }}
+                            </div>
+                        </div>
+                       {{ form_row(registrationForm.agreeTerms, {
+                           label: "J'accepte les conditions générales d'utilisation"
+                         })}}
+                        <div class="text-center">
+                            <button type="submit" class="btn px-5 py-2">Valider</button>
+                        </div>
+                    {{ form_end(registrationForm) }}
+                       
+                </div>
+            </div> 
+        </div> 
+    </main>
 {% endblock %}

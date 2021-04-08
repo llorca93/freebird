@@ -69,7 +69,7 @@ class User implements UserInterface
     private $zip_code;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $dob;
 
