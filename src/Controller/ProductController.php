@@ -25,9 +25,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("")
-     */
+    
 
     /**
      * @Route("/products", name="products")

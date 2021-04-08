@@ -19,16 +19,17 @@
             </div>
             
             <div class="d-flex justify-content-around p-3 img">
-                <img src="{{ asset('images/products/' ~ product.img2) }}" alt="photo principale {{ product.name }}" class=" detail">
-                <img src="{{ asset('images/products/' ~ product.img3) }}" alt="photo principale {{ product.name }}" class=" detail">
+                <img src="{{ asset('images/products/' ~ product.img2) }}" alt="photo 2 {{ product.name }}" class=" detail">
+                <img src="{{ asset('images/products/' ~ product.img3) }}" alt="photo 3 {{ product.name }}" class=" detail">
             </div>
         </div>
             
             <div class="col-6">
                 <p>{{ product.price }} €</p>
                 <p>{{ product.description }}</p>
-                <button type="button" class="btn btn-primary">Ajouter au panier</button>
-                
+                <form action="{{ path('cart', {'id': product.id}) }}">
+                <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </form>
             </div>
             
           
