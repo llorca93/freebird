@@ -12,6 +12,33 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductController extends AbstractController
 {
+
+     /**
+     * @Route("/product-{id}", name="product")
+     */
+    public function product(ProductRepository $productRepository, $id)
+    {
+        $product = $productRepository->find($id);
+        return $this->render('home/product.html.twig', [
+            'product' => $product,
+            
+        ]);
+    }
+
+    
+
+    /**
+     * @Route("/products", name="products")
+     */
+    public function products(ProductRepository $productRepository)
+    {
+        $products = $productRepository->findAll();
+        return $this->render('home/products.html.twig', [
+            'products' => $products,
+        ]);
+    }
+
+
     /**
      * @Route("/admin/product", name="admin_product")
      */
