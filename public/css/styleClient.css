@@ -8,25 +8,64 @@
   
 
   /*************************** GLOBAL ********************* */
-  :root{
+  /*:root{
       --color-black: #2a2a2a;
       --color-grey: #dbdbdb;
       --color-blue: #8ecae4; 
-  }
+  */
 
 
   /* ************************HEADER ************************ */
-header{
-    background-color: var(--color-blue);
-    padding: 20px;
 
+  #id-input{
+    height: 25px;
 }
-
-header img{
+#id-user{
+    font-size: 25px;
+    color: #444444;
+}
+#id-nav-bar #id-user:hover{
+    font-size: 25px;
+    color: #0D7DAD;
+}
+#id-nav-bar #id-panier:hover{
+    font-size: 25px;
+    color: #0D7DAD;
+}
+#id-panier{
+    font-size:25px ;
+    color: #444444;
+}
+#id-recherche{
+    font-size: 23px;
+    color: #444444;
+    
+}
+.nav-header> a{
+    margin: 5px 10px 5px 10px ;
+    padding: 0px 10px 0px 10px;
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-header> a:hover{
+    background-color:#444444 ;
+    padding: 5px 10px 5px 10px;
+    margin: 0px 10px 0px 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.nav-header{
+    height: 50px;
+    display: flex;
+    align-items:flex-end;
+    justify-content:flex-end;
+}
+.logo{
     height: 50px ;
-    padding: 0 20px;
+    margin-left: 30px;
 }
-
   /* ********************   NAV *********************************** */
  
 nav {
@@ -60,6 +99,27 @@ nav ul li a:hover{
 i{
  margin-right:10px;
 }
+/* *************************************************** page profil ****************************************************** */
+.profile .table-properties th {
+    font-weight: normal;
+    width: 15rem;
+  }
+  
+  .profile .table-properties td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .profile .table-properties tr:first-child td,
+  .profile .table-properties tr:first-child th {
+    border-top: none !important;
+  }
+  
+  .profile .img-lg {
+    width: 9rem;
+    height: 9rem;
+  }
+  
 
 /* ****************** FOOTER ****************************/
 footer{
