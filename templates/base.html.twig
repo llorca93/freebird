@@ -10,7 +10,10 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="icon" type="image/png" href="images/favicon.png" />
         <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
-
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
         
         {% block stylesheets %}
         
@@ -46,7 +49,11 @@
                             <a href="/discovery">Découverte</a>
                             <a href="{{ path('shop') }}">Boutique</a>
                             <a href="/about">A propos</a>
+<<<<<<< HEAD
                             <a href="{{ path('contact') }}">Contact</a>
+=======
+                            <a href="{{ path('contact')}}">Contact</a>                          
+>>>>>>> 92d3fa8b8d671e3c0f3e016c3674f0f8c7676701
                         </nav>
                     </div>        
             </div>
@@ -66,7 +73,7 @@
                                     <p><a href="#"> Decouverte</a></p>
                                     <p><a href="#">Boutique</a></p>
                                     <p><a href="#">A propos</a></p>
-                                    <p><a href="#">Contact</a></p>
+                                    <p><a href="#">{{ path('contact')}}</a></p>
                                     <br>
                                     <h4 class=""> Nos activités</h4>
                                     <div class="dropdown-divider"></div>
