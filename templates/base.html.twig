@@ -30,7 +30,7 @@
                         {% endif %}
                         
 
-                        <a href="/cart"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
+                        <a href="{{ path('cart_index') }}"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
                         <input type="search" name="recherche" id="id-input" placeholder="recherche" class="text-center ">
                         <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
                     </div>
@@ -44,9 +44,13 @@
                         <nav class="nav-header " >
                             <a href="{{ path('home') }}">Accueil</a>
                             <a href="/discovery">Découverte</a>
-                            <a href="/shop">Boutique</a>
+                            <a href="{{ path('shop') }}">Boutique</a>
                             <a href="/about">A propos</a>
+<<<<<<< HEAD
                             <a href="{{ path('contact')}}">Contact</a>
+=======
+                            <a href="{{ path('contact') }}">Contact</a>
+>>>>>>> d4c125085611643e4d63a0870a0d9e29bed40921
                         </nav>
                     </div>        
             </div>
