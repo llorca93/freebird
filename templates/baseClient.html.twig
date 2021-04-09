@@ -13,26 +13,54 @@
    </head>
 
    <body>
+       
+    </head>
+    <body>
         <header class="container-fluid">
+    
             <div class="row">
-            <div class="col-2">
-                <img src="{{ asset('images/logo/logo.png')}}" alt="logo Freebird">
-            </div>
-            <h2 class="col-10 text-center">Espace client du site FreeBird </h2>
+                    <div class="col-12 text-right  " id="id-nav-bar">
+                        <a href="/admin" > <i class="fas fa-user" id="id-user"> </i></a>
+                        <a href="/cart"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
+                        <input type="search" name="recherche" id="id-input" placeholder="recherce" class="text-center ">
+                        <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
+                    </div>
+                    <br>
+
+                    
+                    <div class="col-4 ">
+                            <img class="logo text-center" src="{{asset('images/logo/logo.png')}}" alt="logo freebird">
+                    </div> 
+                    <div class="col-8 text-right " >
+                        <nav class="nav-header " >
+                            <a href="/">Accueil</a>
+                            <a href="/discovery">Découverte</a>
+                            <a href="/shop">Boutique</a>
+                            <a href="/about">A propos</a>
+                            <a href="/contact">Contact</a>
+                        </nav>
+                    </div>        
             </div>
         </header>
-
         <main class="container-fluid">            
             <div class="row">
-                <nav class="col-2">
+                <nav class="col-2" id="2second-nav">
                     <ul>
                        <li><a href="{{ path('admin_users')}}"><i class="fas fa-user-circle"></i>Profil</a></li>
                        <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
-            </div>
-        </main>
+                <div class="col-10 p-5">
+
+                    
+                   {% block body %}{% endblock %} 
+                </div>
+            </div>           
+            
+        </main>    
+       
+      
 
         <footer>
             <div class="col-12 text-center">
