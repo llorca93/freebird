@@ -28,4 +28,47 @@ class StaticController extends AbstractController
         ]); ;    
     }
 
+    /**
+    * @Route("/cgv", name="cgv")
+    */
+    public function cgv(): Response
+    {
+        return $this->render('static/cgv.html.twig', [
+            'controller_name' => 'StaticController',
+        ]); ;    
+    }
+
+      /**
+    * @Route("/cgu", name="cgu")
+    */
+    public function cgu(): Response
+    {
+        return $this->render('static/cgu.html.twig', [
+            'controller_name' => 'StaticController',
+        ]); ;    
+    }
+
+      /**
+    * @Route("/mentions-legales", name="mentions-legales")
+    */
+    public function mentionsLegales(): Response
+    {
+        return $this->render('static/mentionsLegales.html.twig', [
+            'controller_name' => 'StaticController',
+        ]); ;    
+    }
+
+      /**
+    * @Route("/politique-de-confidentialite", name="politique-de-confidentialite")
+    */
+    public function politiqueConf(): Response
+    {
+        return $this->render('static/politiqueDeConf.html.twig', [
+            'controller_name' => 'StaticController',
+        ]); ;    
+    }
+
+
+
+
 }
