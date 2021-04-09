@@ -8,6 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ClientController extends AbstractController
 {
+    /**
+     * @Route("/client", name="client")
+     */
     #[Route('/client', name: 'client')]
     public function index(): Response
     {

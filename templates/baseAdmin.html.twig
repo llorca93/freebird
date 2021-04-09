@@ -26,15 +26,18 @@
                 <nav class="col-2">
                     <ul>
                        <li ><a href="{{ path('admin')}}"><i class="fas fa-laptop"></i>Accueil</a></li>
+
                        <li> <a href="{{ path('admin_product')}}"><i class="fas fa-store"></i>Produits</a></li>
-                       <li><a href="{{ path('admin_users')}}"><i class="fas fa-users"></i>Clients</a></li>
-<<<<<<< HEAD
+
+                       {% if is_granted ('ROLE_SUPER_ADMIN') %}
+                           <li><a href="{{ path('admin_users')}}"><i class="fas fa-users"></i>Clients</a></li>
+                        {% endif %}
+
                        <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
+                       
+                       <li><a href="{{ path('admin_categories') }}"> <i class="fas fa-cube"></i>Categories</a></li>
+
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
-=======
-                       <li><a href="{{ path('admin_categories') }}"> <i class="fas fa-cube"></i>Category</a></li>
-                       <li><a href="#"><i class="fas fa-running"></i>Déconnexion</a></li>
->>>>>>> 2d906cc0e3a294577556c3fb38c9615e2e1a41da
                     </ul>
                 </nav>
                 <div class="col-10 p-5">
