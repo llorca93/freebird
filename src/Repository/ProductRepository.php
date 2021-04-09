@@ -47,4 +47,16 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findByCategory($cat)
+    {
+        return $this->createQueryBuilder('fbc') // 'fls' est un alias
+            ->andWhere('fbc.category = :val')
+            ->setParameter('val', $cat)
+            ->orderBy('fbc.category', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }
