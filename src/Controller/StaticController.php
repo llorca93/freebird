@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class StaticController extends AbstractController
 {
     /**
-    * @Route("/discover", name="discover")
+    * @Route("/discovery", name="discovery")
      */
     public function discover(): Response
     {

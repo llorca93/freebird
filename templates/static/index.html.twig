@@ -3,18 +3,41 @@
 {% block title %}Hello StaticController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/freebird/src/Controller/StaticController.php'|file_link(0) }}">src/Controller/StaticController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/freebird/templates/static/index.html.twig'|file_link(0) }}">templates/static/index.html.twig</a></code></li>
-    </ul>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Découvrez-nous !</h1>
+    </div>
 </div>
+
+<div class="container" >
+    <h2 class="display-5 text-center">Les stages</h2>
+    <div class="d-flex align-items-center my-5">
+        <div class="flex-shrink-0">
+            <img src="{{asset('images/products/para1-1.jpg')}}" width="400" alt="...">
+        </div>
+        <div class="flex-grow-1 ml-3 animate__fadeInRight">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+    </div>
+    <h2 class="display-5 text-center">Les Baptêmes</h2>
+    <div class="d-flex align-items-center my-5">
+        
+        <div class="flex-grow-1 ml-3 animate__fadeInRight">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <div class="flex-shrink-0">
+            <img src="{{asset('images/products/para1-1.jpg')}}" width="400" alt="...">
+        </div>
+    </div>
+
+    <h2 class="display-5 text-center">Gallerie</h2>
+    <div class="d-flex flex-wrap justify-content-between">
+        {% for i in 0..8 %}
+            <img src="{{asset('images/products/para1-1.jpg')}}" class="img-fluid col-4 mb-3" alt="...">
+        {% endfor %}
+        
+    </div>
+</div>
+
+
 {% endblock %}
