@@ -42,11 +42,11 @@
                     </div> 
                     <div class="col-8 text-right " >
                         <nav class="nav-header " >
-                            <a href="/">Accueil</a>
+                            <a href="{{ path('home') }}">Accueil</a>
                             <a href="/discovery">Découverte</a>
                             <a href="/shop">Boutique</a>
                             <a href="/about">A propos</a>
-                            <a href="/contact">Contact</a>
+                            <a href="{{ path('contact')}}">Contact</a>
                         </nav>
                     </div>        
             </div>
@@ -66,7 +66,7 @@
                                     <p><a href="#"> Decouverte</a></p>
                                     <p><a href="#">Boutique</a></p>
                                     <p><a href="#">A propos</a></p>
-                                    <p><a href="#">Contact</a></p>
+                                    <p><a href="#">{{ path('contact')}}</a></p>
                                     <br>
                                     <h4 class=""> Nos activités</h4>
                                     <div class="dropdown-divider"></div>
