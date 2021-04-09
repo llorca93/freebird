@@ -12,6 +12,33 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProductController extends AbstractController
 {
+
+     /**
+     * @Route("/product-{id}", name="product")
+     */
+    public function product(ProductRepository $productRepository, $id)
+    {
+        $product = $productRepository->find($id);
+        return $this->render('home/product.html.twig', [
+            'product' => $product,
+            
+        ]);
+    }
+
+    
+
+    /**
+     * @Route("/products", name="products")
+     */
+    public function products(ProductRepository $productRepository)
+    {
+        $products = $productRepository->findAll();
+        return $this->render('home/products.html.twig', [
+            'products' => $products,
+        ]);
+    }
+
+
     /**
      * @Route("/admin/product", name="admin_product")
      */
@@ -43,9 +70,6 @@ class ProductController extends AbstractController
     
                     $cheminImg1 = $this->getParameter('dossier_photos_products') . '/' . $nomOldImg1;
     
-                    if (file_exists($cheminImg1)) {
-                        unlink($cheminImg1);
-                    }
                     $extensionImg1 = $infoImg1->guessExtension(); 
                     $nomImg1 = time() . '-1.' . $extensionImg1; 
                     $infoImg1->move($this->getParameter('dossier_photos_products'), $nomImg1); 

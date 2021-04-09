@@ -46,9 +46,9 @@
             <div class="row">
                 <nav class="col-2" id="2second-nav">
                     <ul>
-                       <li><a href="#"><i class="fas fa-user-circle"></i>Profil</a></li>
-                       <li> <a href="#"><i class="fas fa-cube"></i>Commandes</a></li>
-                       <li><a href="#"><i class="fas fa-running"></i>Déconnexion</a></li>
+                       <li><a href="{{ path('admin_users')}}"><i class="fas fa-user-circle"></i>Profil</a></li>
+                       <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
+                       <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
                 <div class="col-10 p-5">

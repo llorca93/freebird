@@ -6,8 +6,9 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <meta name="autor" content="DJIBRIL BADJI, Pierre, Sabrina, Alexandre">
         <meta name="description" content="Site E-commerce">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <title> Freebird {% block title %} {% endblock %}</title> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="icon" type="image/png" href="images/favicon.png" />
         <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
 
         
@@ -20,10 +21,17 @@
         <header class="container-fluid">
     
             <div class="row">
-                    <div class="col-12 text-right  " id="id-nav-bar">
-                        <a href="/admin" > <i class="fas fa-user" id="id-user"> </i></a>
+                    <div class="col-12 text-right" id="id-nav-bar">
+                        {% if app.user %}
+                            <span class="login-message">Bonjour {{ app.user.LastName|upper}}</span>
+                            <a href="{{ path('client')}}" > <i class="fas fa-user" id="id-user"> </i></a>
+                        {% else %}
+                             <a href="{{ path('app_login')}}" > <i class="fas fa-user" id="id-user"> </i></a>
+                        {% endif %}
+                        
+
                         <a href="/cart"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
-                        <input type="search" name="recherche" id="id-input" placeholder="recherce" class="text-center ">
+                        <input type="search" name="recherche" id="id-input" placeholder="recherche" class="text-center ">
                         <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
                     </div>
                     <br>
