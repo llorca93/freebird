@@ -36,7 +36,6 @@
                     <td>{{ customer.roles|join (' + ')|lower }}</td>
                     <td>
                        <a href="{{ path('admin_user_update', {'id':customer.id}) }}"><i class="fas fa-user-edit"></i></a>
-                       
                         <a href="{{ path('admin_user_delete', {'id':customer.id}) }}"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr> 
@@ -45,7 +44,7 @@
         </tbody>
     </table>
 
-
+    
    
 
  
