@@ -39,8 +39,8 @@
                     <p class="text-wrap text-truncate text-dark">{{product.description}}</p>
                 </div>
                 <div class="col-3 border-left align-items-center d-flex flex-column">
-                    <button href="{{ path('product', {'id':product.id}) }}"class="btn btn-primary my-1">Détails</button>
-                    <button href="{{ path('cart_add', {'id':product.id}) }}" class="btn btn-warning my-1">Ajouter au panier</button>
+                    <a href="{{ path('product', {'id':product.id}) }}" class="btn btn-primary my-1">Détails</a>
+                    <a href="{{ path('cart_add', {'id':product.id}) }}" class="btn btn-warning my-1">Ajouter au panier</a>
                 </div>
             </div>
             
