@@ -2,6 +2,17 @@
 *, ::after, ::before{
     box-sizing: border-box;
 }
+
+main{
+    background-image: url( '../images/register-background-1.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-weight: 600;
+}
 div.row{
     display: flex;
     justify-content: center;
@@ -14,12 +25,15 @@ div.row{
 .card-body{
     padding: 1.25rem;
     font-weight: 400;
-    color: #38c7c7 ;
     font-size: 1.75rem;   
 }
 
 .card{
     border: 1px solid black;
+    background: linear-gradient(45deg, black, transparent);
+    color: white;
+    font-weight: 600;
+    margin-top: 4em;
 }
 
 .card .card-body h3 {
@@ -29,9 +43,8 @@ div.row{
 
 #email,
 #password{
-    border: none;
     border-bottom: 1px solid #bdbdbd;
-    border-radius: 0;
+    border-radius: 10px;
     outline: 0;
     height: 2.1rem;
     width: 100%;
@@ -52,26 +65,33 @@ div.md-form{
 #password.form-control{
     font-family: inherit;
     display: block;
-    border: none;
-    border-bottom: 1px solid black ;
     height: 2.1rem;
     width: 100%;
     box-sizing: content-box;
-    padding: .5rem 0 .6rem;
+    padding: .5rem .3rem .6rem;
     font-weight: 400;
 }
 
 
 .btn{
-   background-color: #38c7c7 ;
-   font-size: .8rem;
+   background-color: #5e9dd0; ;
+   font-size: .9rem;
+   font-weight: 600;
     padding: .85rem 2.13rem;
     margin: 6px;
-    border-radius: 2px;
+    border-radius: 5px;
     border: 0;
     color: #FFF;
+    text-decoration: none;
     text-transform: uppercase;
 }
+
+.btn:hover{
+   background-color: tomato;
+   color: black;
+   transition: 0.5s;
+}
+
 
 .redirect{
     margin: 10px 0;
@@ -80,24 +100,16 @@ div.md-form{
     font-weight: 400;
 }
 
-.redirect p{
-    color: black;
+
+.redirect  a{  
+   padding: 3px 5px;
 }
 
-.redirect  a{
-    color: white;
-   border: 1px solid black;
-   padding: 2px 5px;
-   background-color:#38c7c7;
-   border-radius: 5px;
-   text-decoration: none;
-   text-transform: uppercase;
+.alert-danger{
+    background-color: tomato;
 }
 
-.redirect  a:hover{
-   background-color: tomato;
-   color: black;
-   transition: 0.5s;
-}
+
+
 
 
