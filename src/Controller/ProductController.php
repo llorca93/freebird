@@ -70,9 +70,6 @@ class ProductController extends AbstractController
     
                     $cheminImg1 = $this->getParameter('dossier_photos_products') . '/' . $nomOldImg1;
     
-                    if (file_exists($cheminImg1)) {
-                        unlink($cheminImg1);
-                    }
                     $extensionImg1 = $infoImg1->guessExtension(); 
                     $nomImg1 = time() . '-1.' . $extensionImg1; 
                     $infoImg1->move($this->getParameter('dossier_photos_products'), $nomImg1); 

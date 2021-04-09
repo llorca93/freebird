@@ -8,7 +8,7 @@
         <h1 class="display-4">Boutique</h1>
     </div>
 </div>
-<div class="container d-flex">
+<div class="container d-flex mb-5">
     <div class="col-4">
         <div class="card card-body">
             <h5 class="card-title" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Categorie</h5>
@@ -17,29 +17,33 @@
             </div>
             <div class="collapsed" id="collapseExample">
                 <ul class="list-unstyled">
-                    <li>Parapente</li>
-                    <li>Delta plane</li>
-                    <li>Parachute</li>
-                    <li>Facilisis</li>
+                    {% for category in categories %}
+                    <li>{{category.name}}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
     </div>
     <div class="col-8">
-        {% for i in 0..10 %}
-            <div class="d-flex border rounded card-article my-2">
-            <div class="col-3">
-                <img src="https://media.smartbox.com/pim/1000000407607869960064.jpg?thumbor=640x0" class="card-img-top img-fluid" alt="...">
+        {% for product in products %}
+            <div class="border rounded card-article my-2" style="max-height: 150px;">
+            
+            <div class="d-flex">
+                <div class="col-3">
+                    <img src="{{ asset('images/products/' ~ product.img1) }}" class="card-img-top img-fluid" alt="..." style="max-height: 140px;" >
+                </div>
+                
+                <div class="col-6">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <h6 class="card-title">{{product.price}}</h6>
+                    <p class="text-wrap text-truncate text-dark">{{product.description}}</p>
+                </div>
+                <div class="col-3 border-left align-items-center d-flex flex-column">
+                    <button href="{{ path('product', {'id':product.id}) }}"class="btn btn-primary my-1">Détails</button>
+                    <button href="{{ path('cart_add', {'id':product.id}) }}" class="btn btn-warning my-1">Ajouter au panier</button>
+                </div>
             </div>
             
-            <div class="col-6">
-                <h5 class="card-title">Nom  de l'article</h5>
-                <p class="text-wrap text-truncate">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <div class="col-3 border-left align-items-center d-flex flex-column">
-                <button href="#" class="btn btn-primary my-1">Détails</button>
-                <button href="#" class="btn btn-warning my-1">Ajouter au panier</button>
-            </div>
         </div>
         {% endfor %}
         
