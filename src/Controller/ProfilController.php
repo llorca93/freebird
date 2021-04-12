@@ -2,21 +2,51 @@
 
 namespace App\Controller;
 
+use App\Form\ProfilType;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProfilController extends AbstractController
 {
-    #[Route('/profil', name: 'profil')]
-    public function index(UserRepository $userRepository , $id , Request $request): Response
-    {
-        $profil = $userRepository->find($id);
-        return $this->render('profil/index.html.twig', [
-            'profil' =>$profil
+    #[Route('/compte_infos_personnelles', name: 'compte_infos_personnelles')]
+    public function index(): Response
+    {   
+        
+        return $this->render('profil/profil.html.twig', [
+            'profil' => 'ProfilController',
         ]);
     }
+
+
     
+    #[Route('/compte_infos_personnelles/update-{id}', name: 'compte_infos_personnelles_update')]
+       
+    public function updateCustomer (UserRepository $userRepository, $id, Request $request)
+    {
+        $customer = $userRepository->find($id);
+        $form = $this->createForm(ProfilType::class, $customer);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($customer);
+            $manager->flush();
+
+            $this->addFlash('success', 'vos données personnelles ont été bien modifiées');
+            return $this->redirectToRoute('compte_infos_personnelles');
+
+        }
+        return $this->render('profil/profilForm.html.twig', [
+            'profilForm' => $form->createView()
+        ]);
+    }
+
+
+
+
+
 }
+

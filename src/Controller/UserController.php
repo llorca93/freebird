@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Form\UserType;
-use App\Controller\UserController;
+
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
