@@ -1,0 +1,62 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+<div class="text-center ">
+          <h1>  Bienvenue dans votre espace personnel</h1>
+          <h6>Vous pouvez modifier vos informations</6>
+            
+          <div class="col-12 " >
+             <img alt="picture" src="{{ asset('images/profil.jpg') }}" class="img-lg rounded-circle border shadow" id=""/>
+             <h3>{{app.user.LastName}}</h3>
+          </div>
+            
+          <div class="tab-pane fade show active " id="profile" role="tabpanel" aria-labelledby="profile-tab">Profil
+            <table class="table table-hover table-sm table-properties">
+              <tr v-show="user.sub">
+                <th>Genre</th>
+                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 20rem;">{{app.user.gender}}</td>
+              </tr>
+              <tr v-show="user.firstName">
+                <th>Prénom</th>
+                <td>{{app.user.FirstName}}</td>
+              </tr>
+              <tr v-show="user.lastName">
+                <th>Nom</th>
+                <td>{{app.user.LastName}}</td>
+              </tr>
+              <tr v-show="user.email">
+                <th>Adresse email</th>
+                <td>{{app.user.username}}</td>
+              </tr>
+              <tr v-show="user.adresse">
+                <th>Adresse</th>
+                <td>{{app.user.address}}</td>
+              </tr>
+              <tr v-show="user.city">
+                <th>Ville</th>
+                <td>{{app.user.city}}</td>
+              </tr>
+              <tr v-show="user.code.postal">
+                <th>Code postal</th>
+                <td>{{app.user.zipCode}}</td>
+              </tr>
+              <tr v-show="user.date.anniversaire">
+                <th>Date d'anniversaire</th>
+                <td>{{app.user.dob.format('d/m/y')}}</td>
+              </tr>
+              
+                
+                
+              
+
+            </table>
+            
+            <a href="{{ path('compte_infos_personnelles_update', {'id':app.user.id}) }}" class="btn btn-secondary"><i >Modifier</i></a>
+        </div>
+              
+ </div>
+        
+
+{% endblock %}

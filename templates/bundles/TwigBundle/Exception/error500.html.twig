@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} erreur 500 {%  endblock %}
+
+{% block body %}
+
+    <header class="container-fluid bg-light p-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>FreeBird - erreur 500</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="my-5">Une erreur interne est survenue </h2>
+                <a href="{{ path('home') }}" class="btn btn-outline-secondary my-5">retourner à l'accueil</a>
+            </div>
+        </div>
+    </main>
+
+    {% endblock %}

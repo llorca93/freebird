@@ -8,6 +8,16 @@
 
 {% block body %}
 <main>
+    
+    {% for message in app.flashes('success_register') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+   
+    {% for message in app.flashes('success_verify_email') %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+    {% endfor %}
+  
+
     <form method="post">
         <div class="container mt-4">   
             <div class="row">        
