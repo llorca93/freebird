@@ -18,5 +18,7 @@ class ProfilController extends AbstractController
             'profil' =>$profil
         ]);
     }
+   
+    
     
 }

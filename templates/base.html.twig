@@ -49,7 +49,11 @@
                             <a href="/discovery">Découverte</a>
                             <a href="{{ path('shop') }}">Boutique</a>
                             <a href="/about">A propos</a>
+<<<<<<< HEAD
                             <a href="{{ path('contact') }}">Contact</a>
+=======
+                            <a href="{{ path('contact')}}">Contact</a>                          
+>>>>>>> bc95ed34a54e2d0f06ee0c6d23d4ffe86b855cd5
                         </nav>
                     </div>        
             </div>
@@ -69,7 +73,7 @@
                                     <p><a href="#"> Decouverte</a></p>
                                     <p><a href="#">Boutique</a></p>
                                     <p><a href="#">A propos</a></p>
-                                    <p><a href="#">{{ path('contact')}}</a></p>
+                                    <p><a href="{{ path('contact') }}">Contact</a></p>
                                     <br>
                                     <h4 class=""> Nos activités</h4>
                                     <div class="dropdown-divider"></div>
@@ -104,7 +108,7 @@
                            </div>
                             
                                 <div class="col-12 text-center">
-                                    <p > <a href="#"> Mentions légales-</a> <a href="#">CGV- </a> <a href="#">CGU</a> <a href="#">- Politique de confidentialités </a></p>
+                                    <p> <a href="{{ path( 'mentions-legales')}}"> Mentions légales-</a> <a href="{{ path( 'cgv')}}">CGV- </a> <a href="{{ path( 'cgu')}}">CGU</a> <a href="{{ path( 'politique-de-confidentialite')}}">- Politique de confidentialités </a></p>
                                     <p>Copyright © 2021-Freebird</p>
                                 </div>
                         </div>
