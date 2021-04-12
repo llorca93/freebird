@@ -150,3 +150,12 @@ span.login-message{
 
 /******************************************** PARTENAIRES *******************************************/
 
+/*****************************************DropDown***************************************/
+
+.dropdown-menu{
+    width: 50%;
+    position: absolute;
+    right: 50px;    
+    text-align: center;
+    background-color: azure;
+}
