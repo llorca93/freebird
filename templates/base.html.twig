@@ -41,14 +41,14 @@
 
                     
                     <div class="col-4 ">
-                            <img class="logo text-center" src="{{asset('images/logo/logo.png')}}" alt="logo freebird">
+                            <img class="logo text-center" src="{{ asset('images/logo/logo.png') }}" alt="logo freebird">
                     </div> 
                     <div class="col-8 text-right " >
                         <nav class="nav-header " >
                             <a href="{{ path('home') }}">Accueil</a>
-                            <a href="/discovery">Découverte</a>
+                            <a href="{{ path('discovery') }}">Découverte</a>
                             <a href="{{ path('shop') }}">Boutique</a>
-                            <a href="/about">A propos</a>
+                            <a href="{{ path('about') }}">A propos</a>
                             <a href="{{ path('contact')}}">Contact</a>                          
                         </nav>
                     </div>        
@@ -64,11 +64,11 @@
                         <div class="row">
                              
                             <div class="col-4 p-3">
-                                    <h4 class=""> Nos pages</h5>
+                                    <h4 class=""> Nos pages</h4>
                                     <div class="dropdown-divider"></div>
-                                    <p><a href="#"> Decouverte</a></p>
-                                    <p><a href="#">Boutique</a></p>
-                                    <p><a href="#">A propos</a></p>
+                                    <p><a href="{{ path('discovery') }}"> Decouverte</a></p>
+                                    <p><a href="{{ path('shop') }}">Boutique</a></p>
+                                    <p><a href="{{ path('about') }}">A propos</a></p>
                                     <p><a href="{{ path('contact') }}">Contact</a></p>
                                     <br>
                                     <h4 class=""> Nos activités</h4>
