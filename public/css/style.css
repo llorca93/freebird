@@ -148,3 +148,14 @@ span.login-message{
     background-color:#444444fa;
 }
 
+/******************************************** PARTENAIRES *******************************************/
+
+/*****************************************DropDown***************************************/
+
+.dropdown-menu{
+    width: 50%;
+    position: absolute;
+    right: 50px;    
+    text-align: center;
+    background-color: azure;
+}

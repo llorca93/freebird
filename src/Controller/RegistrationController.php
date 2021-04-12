@@ -23,7 +23,10 @@ class RegistrationController extends AbstractController
         $this->emailVerifier = $emailVerifier;
     }
 
-    #[Route('/register', name: 'app_register')]
+    
+    /**
+     * @Route("/register", name="app_register")
+     */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder): Response
     {
         if ($this->getUser()) {
@@ -45,7 +48,10 @@ class RegistrationController extends AbstractController
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
-            $entityManager->flush();
+            $entityManager->flush(); 
+            $this->addFlash('success_register', 'Votre inscription est prise en compte, un mail a été envoyé dans votre boite mail, merci de confirmer afin de finaliser votre inscription');
+            
+
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
@@ -53,11 +59,15 @@ class RegistrationController extends AbstractController
                     ->from(new Address('djibybastian50@gmail.com', 'freebird'))
                     ->to($user->getEmail())
                     ->subject('Please Confirm your Email')
-                    ->htmlTemplate('security/confirmation_email.html.twig')
+                    ->htmlTemplate('security/confirmation_email.html.twig'),
+                   
+                    
             );
+           
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('app_login');
+        
         }
 
         return $this->render('security/register.html.twig', [
@@ -65,7 +75,10 @@ class RegistrationController extends AbstractController
         ]);
     }
 
-    #[Route('/verify/email', name: 'app_verify_email')]
+    /**
+     * @Route("/verify/email", name="app_verify_email")
+     */
+    
     public function verifyUserEmail(Request $request): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
@@ -80,8 +93,8 @@ class RegistrationController extends AbstractController
         }
 
         // @TODO Change the redirect on success and handle or remove the flash message in your templates
-        $this->addFlash('success', 'Your email address has been verified.');
+        $this->addFlash('success_verify_email', 'Bravo, vous venez de vérifier votre email');
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('app_login');
     }
 }

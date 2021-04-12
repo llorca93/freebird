@@ -56,7 +56,7 @@ class RegistrationFormType extends AbstractType
 
             ->add('email', EmailType::class, [
                 'attr'=> [
-                    'placeholder' =>  'Ex: prenom.nom@gmail.com'
+                    'placeholder' =>  'prenom.nom@gmail.com'
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -82,9 +82,9 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new PasswordStrength([
                         'minLength' => 8,
-                        'tooShortMessage' => ' Le mot de passe doit contenir au moins {{ length }} caractères',
+                        'tooShortMessage' => 'Le mot de passe doit contenir minimum 8 caractères dont une lettre miniscule, une lettre majuscule, un chiffre et un caractère spécial',
                         'minStrength'=> 4,
-                        'message' => 'Le mot de passe doit contenir au moins une lettre miniscule, une lettre majuscule, un chiffre et un caractère spécial'
+                        'message' => 'Le mot de passe doit contenir minimum 8 caractères dont une lettre miniscule, une lettre majuscule, un chiffre et un caractère spécial'
                     ]),
                 ],
             ])

@@ -27,7 +27,7 @@
                     <ul>
                        <li ><a href="{{ path('admin')}}"><i class="fas fa-laptop"></i>Accueil</a></li>
 
-                       <li> <a href="{{ path('admin_product')}}"><i class="fas fa-store"></i>Produits</a></li>
+                       <li> <a href="{{ path('admin_product')}}"><i class="fas fa-tag"></i>Produits</a></li>
 
                        {% if is_granted ('ROLE_SUPER_ADMIN') %}
                            <li><a href="{{ path('admin_users')}}"><i class="fas fa-users"></i>Clients</a></li>
@@ -35,7 +35,7 @@
 
                        <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
                        
-                       <li><a href="{{ path('admin_categories') }}"> <i class="fas fa-cube"></i>Categories</a></li>
+                       <li><a href="{{ path('admin_categories') }}"> <i class="fas fa-list"></i>Categories</a></li>
 
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
@@ -56,10 +56,15 @@
 
         <footer>
             <div class="col-12 text-center">
-                <p > <a href="#"> Mentions légales-</a> <a href="#">CGV- </a> <a href="#">CGU</a> <a href="#">- Politiques de confidentialités </a></p>
+                <p > <a href="{{ path( 'mentions-legales')}}"> Mentions légales-</a> 
+                <a href="{{ path( 'cgv')}}">CGV- </a> 
+                <a href="{{ path( 'cgu')}}">CGU</a> 
+
+                <a href="{{ path( 'politique-de-confidentialite')}}">- Politiques de confidentialités </a></p>
                 <p>Copyright © 2021-Freebird</p>
             </div>
         </footer>
+       
 
 
 
