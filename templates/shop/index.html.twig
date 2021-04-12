@@ -6,6 +6,9 @@
 <div class="jumbotron">
     <div class="container">
         <h1 class="display-4">Boutique</h1>
+        {% if category %}
+            <h5 class="p">{{category.name}}</h5>
+        {% endif %}
     </div>
 </div>
 <div class="container d-flex mb-5">
@@ -18,7 +21,7 @@
             <div class="collapsed" id="collapseExample">
                 <ul class="list-unstyled">
                     {% for category in categories %}
-                    <li>{{category.name}}</li>
+                    <li><a href="{{ path('shop', {'categoryId':category.id}) }}">{{category.name}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
