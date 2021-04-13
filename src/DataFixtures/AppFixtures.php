@@ -37,7 +37,7 @@ class AppFixtures extends Fixture
         $customer->setCity('Loin');
         $customer->setZipCode('75000');
         $customer->setDob($faker->dateTime());
-
+        $customer->setRole('ROLE_SUPER_ADMIN');
         $manager->persist($customer);
         $manager->flush();
         // $category = new Category();
