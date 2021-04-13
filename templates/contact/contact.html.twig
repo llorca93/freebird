@@ -5,7 +5,7 @@
 {% block body %}
 
 <header class="container-fluid p-5 text-center ">
-    <h1> FREEBIRD - CONTACT</h1>
+    <h1 id="id-titre"> FREEBIRD - CONTACT</h1>
     <p class="text-dark">Vous pouvez nous contacter par email via cette page nous vous répondrons sur les meilleurs délais.</p>
   </header>
          
@@ -22,55 +22,51 @@
    
     {{ form_start(contactForm) }}
     
-        <div class="row">
+        <div class="row" id="id-form-contact">
             
 
         
            
-            <div class="col-2 offset-2 mb-3 text-secondary " >
+            <div class="col-2 offset-2 mb-3 text-secondary " id="id-nom" >
                 {{  form_label(contactForm.nom) }}
                 {{ form_widget(contactForm.nom) }}
                 {{ form_help(contactForm.nom) }}
                 {{ form_errors(contactForm.nom) }}
             </div>
 
-            <div class="col-2 mb-3 text-secondary" >
+            <div class="col-2 mb-3 text-secondary"  id="id-prenom">
                 {{ form_label(contactForm.prenom) }}
                 {{ form_widget(contactForm.prenom) }}
             </div>
 
-            <div class="col-6 offset-2 mb-3 text-secondary">
+            <div class="col-8 offset-2 mb-3 text-secondary" id="id-mail">
                 {{ form_label(contactForm.email) }}
                 {{ form_widget(contactForm.email) }}
             </div>
 
-            <div class="col-6 offset-2 mb-3 text-secondary">
+            <div class="col-8 offset-2 mb-3 text-secondary" id="id-objet">
                 {{ form_label(contactForm.objet) }}
                 {{ form_widget(contactForm.objet) }}
             </div>
 
-            <div class="col-6 offset-2 mb-3 text-secondary">
+            <div class="col-8 offset-2 mb-3 text-secondary" id="id-message">
                 {{ form_label(contactForm.message) }}
                 {{ form_widget(contactForm.message) }}
             </div>
 
-            <div class="col-6 offset-2 mb-3 text-secondary">
+            <div class="col-8 offset-2 mb-3 text-secondary" id="id-fichier">
                 {{ form_label(contactForm.fichier) }}
                 {{ form_widget(contactForm.fichier) }}
             </div>
             <br>
-            <div class="col-6 offset-2 text-center mb-3 ">
+            <div class="col-8 offset-2 text-center mb-3 " >
                 {{ form_widget(contactForm.envoyer) }}
             </div>
 
         </div>
 
     {{ form_end(contactForm) }}
-    <div class="" id="donnes">
-        <div>
-            
-        </div>
-    </div>
+   
   </section>
 
 {% endblock %}
