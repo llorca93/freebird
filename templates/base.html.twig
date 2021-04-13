@@ -19,74 +19,104 @@
 
     <body>
         <header class="container-fluid">
-    
-            <div class="row">
-                    <div class="col-12 text-right" id="id-nav-bar">
-                        {% if app.user %}
-                            <span class="login-message">Bonjour {{ app.user.LastName|upper}}</span>
-                            <a href="{{ path('compte')}}" > <i class="fas fa-user" id="id-user"> </i></a>
-                        {% else %}
-                             <a href="{{ path('app_login') }}" > <i class="fas fa-user" id="id-user"></i></a>
-                        {% endif %}
 
- 
-                        <a href="{{ path('cart_index') }}"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
-                        <input type="search" name="recherche" id="id-input" placeholder="recherche" class="text-center ">
-                        <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
+            <section class="header-top">
+
+               <div class="logo">
+                   <a href="{{ path('home')}}">
+                  <img src="{{ asset('images/logo/logo.png') }}" alt="Logo du site FreeBird">  
+                  </a>
+               </div>
+                
+               <div class="search-bar">
+                    <div>
+                        <form action="https://www.google.com/search">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="query" placeholder="Recherche" aria-label="bar-de-recherche">
+                           
+                            <div class="input-group-append">
+                                
+                                   <span class="input-group-text">  <button> <a href=""><i class="fas fa-search"></a></i></button></span>
+                            </div>
+                        </div>
+                    </form>
                     </div>
-                    <br>
-                   
-                    <div class="col-4 ">
-                            <img class="logo text-center" src="{{ asset('images/logo/logo.png') }}" alt="logo freebird">
-                    </div> 
-                    <div class="col-8 text-right " >
-                        <nav class="nav-header " >
-                            <a href="{{ path('home') }}">Accueil</a>
-                            <a href="{{ path('discovery') }}">Découverte</a>
-                            <a href="{{ path('shop') }}">Boutique</a>
-                            <a href="{{ path('about') }}">A propos</a>
-                            <a href="{{ path('contact')}}">Contact</a>                          
-                        </nav>
-                    </div>        
-            </div>
+               </div>
+
+                <div class="icons">
+                    
+                    {% if app.user %}
+                       <span class="login-message">Bonjour {{ app.user.FirstName|upper}}</span>
+                   {% endif %}  
+                    <a href="#" id="dropdownMenuButton" ><i class="fas fa-user"></i></a> 
+                    <a href="{{ path('cart_index') }}"><i class="fas fa-cart-arrow-down"></i></a> 
+                    
+
+                    <div class="dropdown" id="dropdown-menu"aria-labelledby="dropdownMenuButton">  
+                        <div class="close">+</div> 
+                        {% if app.user %}
+                            <a class="dropdown-item" href="{{ path('client')}}">Votre compte</a>
+                            
+                        {% else %}                       
+                            <a class="dropdown-item" href="{{ path('app_login')}}">Votre compte</a>
+                            <a class="dropdown-item" href="{{ path('app_register')}}">Inscription</a> 
+                        {% endif %}
+                        
+                        {% if is_granted ('ROLE_SUPER_ADMIN') or is_granted ('ROLE_ADMIN')  %}
+                           <a class="dropdown-item" href="{{ path('admin')}}">Espace administrateur</a> 
+                        {% endif %}
+                        <!-- <a class="dropdown-item" href="#">Connexion</a> -->
+                        
+                        {% if app.user %}
+                          <a class="dropdown-item" href="{{ path('app_logout')}}">Déconnexion</a>
+                        </div> 
+                        {% endif %}
+                    </div>
+                    
+                </div>
+
+            </section>
+
+            <section class="header-buttom">
+                            
+               <div> <a href="{{ path('home') }}">Accueil</a></div>
+               <div><a href="{{ path('discovery') }} ">Découverte</a></div>
+               <div><a href="{{ path('shop') }}" >Boutique</a></div>
+               <div><a href="{{ path('about') }}">A propos</a></div>
+               <div><a href="{{ path('contact')}}">Contact</a></div>
+            </section>
         </header>
 
         
-            {% block body %}{% endblock %} 
+        {% block body %}{% endblock %} 
         
     
-    <footer>
-                    <section class="container-fluid" id="id-section-footer">
-                        <div class="row" id="id-div-footer">
+        <footer>
+            <section class="container-fluid" id="id-section-footer">
+                <div class="row">
                              
-                            <div class="col-4 p-3" id="id-pages-activites">
-                                 <div>
-                                    <h4 class=""> Nos pages</h4>
-                                    <div class="dropdown-divider"></div>
-                                    <p><a href="{{ path('discovery') }}"> Decouverte</a></p>
-                                    <p><a href="{{ path('shop') }}">Boutique</a></p>
-                                    <p><a href="{{ path('about') }}">A propos</a></p>
-                                    <p><a href="{{ path('contact') }}">Contact</a></p>
-                                 </div>
-                                 <br>
-                                 <div>
-                                    
-                                    <h4 class=""> Nos activités</h4>
-                                    <div class="dropdown-divider"></div>
-                                    <p><a href="#">Ventes de produits </a></p>
-                                    <p><a href="#">Nos stages</a></p>
-                                    <p><a href="#">Baptêmes</a></p>
-                                 </div>
+                    <div class="col-4 p-3">
+                        <h4 class=""> Nos pages</h4>
+                            <div class="dropdown-divider"></div>
+                                <p><a href="{{ path('discovery') }}"> Decouverte</a></p>
+                                <p><a href="{{ path('shop') }}">Boutique</a></p>
+                                <p><a href="{{ path('about') }}">A propos</a></p>
+                                <p><a href="{{ path('contact') }}">Contact</a></p>
+                                <br>
+                                <h4 class=""> Nos activités</h4>
+                                <div class="dropdown-divider"></div>
+                                <p><a href="#">Ventes de produits </a></p>
+                                <p><a href="#">Nos stages</a></p>
+                                <p><a href="#">Baptêmes</a></p>
                                     
                             </div>  
                                     
                             <div class="col-4 p-3" id="id-map">
                                 <div>
                                     <map name="carte-de-deploiement">
-                                        <area shape="" coords=""
-                                              href=""
+                                        <area shape="" coords="" href=""
                                               target="_blank" alt="HTML" />
-                                <img src="{{ asset('images/map.jpg') }}" alt="" class="w-100">
+                                       <img src="{{ asset('images/map.jpg') }}" alt="" class="w-100">
                                       
                                     </map>
                                     <img usemap="" src="" alt="" />
@@ -94,25 +124,26 @@
                                 
 
                             </div>
-                            <div class="col-4 p-3" id="id-reseaux">
-                                <h4 class="">Réseaux sociaux</h4>
+                            <div class="col-4 p-3 text-center" id="id-reseaux">
+                                <h4 class="bg-info">Réseaux sociaux</h4>
                                 <p>Vous pouvez nous joindre sur nos différents réseaux <br> sociaux pour partagez plus d'experiences et le quotidien de toute la Team Freebird</p>
                                 <div class="dropdown-divider"></div>
-                                <a href=""> <i class="fab fa-facebook-square "></i></a>
-                                <a href=""> <i class="fab fa-instagram-square"></i></a>
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-linkedin"></i></a>
+                                <a href="#"> <i class="fab fa-facebook-square "></i></a>
+                                <a href="#"> <i class="fab fa-instagram-square"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
                            </div>
                             
-                                <div class="col-12 text-center">
-                                    <p> <a href="{{ path( 'mentions-legales')}}"> Mentions légales-</a> <a href="{{ path( 'cgv')}}">CGV- </a> <a href="{{ path( 'cgu')}}">CGU</a> <a href="{{ path( 'politique-de-confidentialite')}}">- Politique de confidentialités </a></p>
-                                    <p>Copyright © 2021-Freebird</p>
-                                </div>
-                        </div>
+                            <div class="col-12 text-center">
+                                <p> <a href="{{ path( 'mentions-legales')}}"> Mentions légales-</a> <a href="{{ path( 'cgv')}}">CGV- </a> <a href="{{ path( 'cgu')}}">CGU</a> <a href="{{ path( 'politique-de-confidentialite')}}">- Politique de confidentialités </a></p>
+                                <p>Copyright © 2021-Freebird</p>
+                            </div>
+                </div>
 
-                    </section>
-    </footer>
-
+            </section>
+        </footer>
+        
+      
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

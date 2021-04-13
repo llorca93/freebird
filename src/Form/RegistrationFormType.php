@@ -82,9 +82,9 @@ class RegistrationFormType extends AbstractType
                     ]),
                     new PasswordStrength([
                         'minLength' => 8,
-                        'tooShortMessage' => 'Le mot de passe doit contenir minimum 8 caractères dont une lettre miniscule, une lettre majuscule, un chiffre et un caractère spécial',
+                        'tooShortMessage' => ' Minimum 8 caractères dont 1 miniscule, 1 majuscule, 1 chiffre et 1 caractère spécial',
                         'minStrength'=> 4,
-                        'message' => 'Le mot de passe doit contenir minimum 8 caractères dont une lettre miniscule, une lettre majuscule, un chiffre et un caractère spécial'
+                        'message' => 'Minimum 8 caractères dont 1 miniscule, 1 majuscule, 1 chiffre et 1 caractère spécial'
                     ]),
                 ],
             ])

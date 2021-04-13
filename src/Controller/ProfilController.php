@@ -19,8 +19,8 @@ class ProfilController extends AbstractController
             'profil' => 'ProfilController',
         ]);
     }
-
-
+   
+    
     
     #[Route('/compte_infos_personnelles/update-{id}', name: 'compte_infos_personnelles_update')]
        

@@ -31,4 +31,9 @@ final class Version20210402131231 extends AbstractMigration
         $this->addSql('DROP TABLE product_order');
         $this->addSql('ALTER TABLE user DROP role');
     }
+
+    public function isTransactional(): bool
+{
+    return false;
+}
 }

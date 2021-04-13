@@ -1,27 +1,54 @@
-/*---------------------------------------------------  Base footer ------------------------------------------------------------*/
-
 * {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    text-decoration: none;
+}
+/* ----------------------------------HOME PAGE----------------------------------------*/
+header{
+  /* height: 200px; */
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 !important;
+    /* position: fixed;
+    z-index: 2; */
 }
 
-#id-section-footer{
-    background-color:black;
-}
-#id-section-footer{
-    color:rgba(245, 245, 245, 0.884);
+
+/*********************Header top section****************************/
+.header-top{
+   height:100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+    padding: 0 20px;
+    background-image: url(../images/background-header4.jpg);
+    background-position-x: right;
+    background-position-y: center;
+    background-size: cover;
 }
 
-#id-section-footer a,p{
-    color:rgb(245, 245, 245);
+.header-top .logo,
+.header-top .search-bar,
+.header-top .icons
+{
+    height: 50%;
 }
 
-#id-reseaux a{
-    font-size: 35px;
-    padding: 5px;
-    
+.header-top .logo{
+    height: 70px;
+    width: 30%;
+    margin: 0;
+}
+
+.header-top .logo img
+{
+  height:100%;
+}
+
+.header-top .search-bar
+{
+    width: 40%;
 }
 /* ********************************************************** responsive base footer page-contact ********************************************* */
 @media screen and (max-width: 428px) {
@@ -162,67 +189,98 @@
   
 /*------------------------------------------------------ header base home------------------------------------------------------------*/
 
-#id-input{
+
+/* #id-input{
     height: 25px;
+} */
+
+span a
+{
+    color: black;
 }
-#id-user{
-    font-size: 25px;
-    color: #444444;
+
+span button
+{
+    border: none;
 }
-#id-nav-bar #id-user:hover{
-    font-size: 25px;
-    color: #0D7DAD;
+
+.header-top .icons{
+  width: 30%;
+  text-align: end;
+  padding-right: 20px;
 }
-#id-nav-bar #id-panier:hover{
-    font-size: 25px;
-    color: #0D7DAD;
+
+.header-top .icons a i {
+  font-size: 1.6em; 
+  color: black;
 }
-#id-panier{
-    font-size:25px ;
-    color: #444444;
+
+#dropdownMenuButton {
+    padding-right: 10px;
 }
-#id-recherche{
-    font-size: 23px;
-    color: #444444;
-    
+
+
+/* ***********************Header Buttom section******************** */
+.header-buttom{
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: black;
 }
-.nav-header> a{
-    margin: 5px 10px 5px 10px ;
-    padding: 0px 10px 0px 10px;
-    color:black;
-    text-decoration: none;
-    font-weight: bold;
+
+.header-buttom div{
+    width: 20%;
+    text-align: center;
 }
-.nav-header> a:hover{
-    background-color:#444444 ;
-    padding: 5px 10px 5px 10px;
-    margin: 0px 10px 0px 10px;
+
+.header-buttom a{
+    display: inline-block;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-.nav-header{
-    height: 50px;
-    display: flex;
-    align-items:flex-end;
-    justify-content:flex-end;
-}
-.logo{
-    height: 50px ;
-    margin-left: 30px;
+    font-weight: 400;
+    width: 100%;
 }
 
-span.login-message{
-    margin: 0 15px;
-    font-size: 1.2rem;
-    font-weight: 600;
+.header-buttom a:hover{
+    background-color: wheat;
+    color: black;
+    font-weight: 500;
 }
 
-/****************************************** MAIN HOME *****************************************/
 
-.thumbnail img {
-    background: #ffd301;
-  }
+
+
+/*****************************************DropDown Header***************************************/
+
+#dropdown-menu{
+    display: none;
+    width: 300px;
+    position: absolute;
+    right: 0px;  
+    top: 60px;  
+    text-align: center;
+    background-color: azure;
+    z-index: 2;
+}
+
+.close{
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+
+/**********************Carousel Home Page*************************/
+.carousel-inner{
+    height: 100vh;
+} 
+
+
+/******************************************** PARTENAIRES *******************************************/
+
+/*****************************************  Base footer ********************************************/
+
 
   .thumbnail .price {
     background: #5cb85c;
@@ -259,19 +317,33 @@ span.login-message{
 
   .btn-order {
     width: 45%;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 12px;
     color: #fff;
     background-color: #e7480f;
     text-decoration: none;
-    text-shadow: 2px 2px #333;
-  }
-  
-  .btn-order:hover, .btn-order:focus {
-    color: #fff;
-    background-color: #c13c0d;
-  }
-/*-------------------------------------------------------------------main page contact --------------------------------------------------------------*/
+    /* z-index: 2; */
+}
+
+#id-section-footer{
+    background-color: #444444;
+}
+#id-section-footer{
+    color:rgba(245, 245, 245, 0.884);
+}
+
+#id-section-footer a,p{
+    color:rgb(245, 245, 245);
+}
+
+#id-reseaux a{
+    font-size: 35px;
+    padding: 5px;
+    
+}
+
+
+/******************************************-main page contact ****************************************/
 #id-main-page-contact{
     background-image: url("../images/para-for-form.jpg") ;
     display: flex;
@@ -279,14 +351,102 @@ span.login-message{
 
 }
 
-/******************************************** PARTENAIRES *******************************************/
 
-/*****************************************DropDown***************************************/
 
-.dropdown-menu{
-    width: 50%;
-    position: absolute;
-    right: 50px;    
-    text-align: center;
-    background-color: azure;
+/*--------------------------------RESPONSIVE----------------------------------*/
+
+/******************************Responsive Header ********************/
+@media screen and (min-width: 291px) and (max-width: 500px){
+    header *{
+        font-size: 0.7rem;
+    }
+    .header-top{
+        height: 75px;
+        padding: 0 10px;
+    }
+
+    .header-top .logo{
+        height: 50%;
+        width: 20%;
+    }
+
+    .header-top .icons{
+      padding-right: 0;
+      font-size: smaller;
+      width: 20%;
+    }
+    .header-top search-bar{
+      width: 60%;
+    }
+    #dropdownMenuButton{
+        padding-right: 0;
+    }
 }
+
+@media screen and (max-width: 290px){
+
+    header *{
+      font-size: 0.2em;
+    }
+
+    .header-top{
+        height: 50px;
+        padding: 0; 
+    }
+
+    .header-top .icons{
+        width: 30%;
+        text-align: end;
+        padding-right: 10px;
+        height: 50%;
+    }
+     .header-top .logo {
+        height: 50%;}
+
+
+    .header-top search-bar{
+        width: 100% !important;
+        height: 70%;
+      }
+}
+
+@media screen and (min-width: 320px) and (max-width: 955px){
+    .icons{
+        display: flex;
+        flex-direction: row;
+        font-size: 0.8em;
+        justify-content: flex-end;
+        padding-right: 0;
+    }
+
+    .icons span{
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: block;
+    align-self: start;
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 680px){
+        .icons{
+            padding-right: 0;
+        }
+        
+        .icons span, 
+        .icons a{
+            font-size: 0.5rem; 
+        }
+    }
+}
+
+/**************************RESPONSIVE REGISTER FORM***************************/
+@media screen and (min-width: 320px) and (max-width: 530px){
+   .form-group.row{
+       flex-direction: column!important; 
+    }
+
+    .form-group.row div{
+       max-width: 100%; 
+    }
+}
+
+
