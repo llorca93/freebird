@@ -14,7 +14,7 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        // $category = new Category();
+        /* $category = new Category();
          $product = new Product();
          $product->setName('Parapente Advance Alpha 6');
          $product->setPrice(2900);
@@ -25,6 +25,21 @@ class AppFixtures extends Fixture
          $product->setCategory(1);
          $manager->persist($product); 
          $manager->flush();
+        */
+        $faker = Faker\Factory::create();
+         $customer = new User ();
+        $customer->setEmail('admin.user@gmail.com');
+        $customer->setPassword('@Zerty123');
+        $customer->setLastName('admin');
+        $customer->setFirstName('istrator');
+        $customer->setGender('Homme');
+        $customer->setAddress('nul part');
+        $customer->setCity('Loin');
+        $customer->setZipCode('75000');
+        $customer->setDob($faker->dateTime());
+
+        $manager->persist($customer);
+        $manager->flush();
         // $category = new Category();
         // $category->setName('stages');
         // $manager->persist($category);
