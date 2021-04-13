@@ -3,50 +3,51 @@
 {% block title %}admin_users{% endblock %}
 
 {% block body %}
-    <table class="table">
+<div>
+    <h1 class="pb-5">Liste des utilisateurs</h1>
+    <table class="table table-bordered table-dark text-center table-hover table-sm">
         <thead>
             <tr>
-                <th scope="col">N°</th>
-                <th scope="col">Civilité</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Email</th>                
-                <th scope="col">Adresse</th>
-                <th scope="col">Ville</th>
-                <th scope="col">Code postal</th>
-                <th scope="col">Date de naissance</th>
-                <th scope="col">Roles</th>
-                <th scope="col">Action</th>
-
+                <th>N°</th>
+                <th>Civilité</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Code postal</th>
+                <th>Date de naissance</th>
+                <th>Roles</th>
+                <th>Actions</t&h>
             </tr>
         </thead>
-
-        <tbody>           
-            {% for customer in customers %}                           
+        <tbody>
+            {% for customer in customers %}
                 <tr>
-                    <td scope="row"> {{ customer.id }}</td>
-                    <td>{{ customer.gender }}</td>
-                    <td>{{ customer.lastName }}</td>
-                    <td>{{ customer.firstName }}</td>
-                    <td>{{ customer.email }}</td>
-                    <td>{{ customer.address }}</td>
-                    <td>{{ customer.city }}</td>
-                    <td>{{ customer.zipCode }}</td>
-                    <td>{{ customer.dob.format('d/m/Y') }}</td>
-                    <td>{{ customer.roles|join (' + ')|lower }}</td>
-                    <td>
-                       <a href="{{ path('admin_user_update', {'id':customer.id}) }}"><i class="fas fa-user-edit"></i></a>
-                        <a href="{{ path('admin_user_delete', {'id':customer.id}) }}"><i class="fas fa-trash"></i></a>
+                    <td class="align-middle">{{ loop.index }}</td>
+                    <td class="align-middle">{{ customer.gender }}</td>
+                    <td class="align-middle">{{ customer.lastName }}</td>
+                    <td class="align-middle">{{ customer.firstName }}</td>
+                    <td class="align-middle">{{ customer.email }}</td>
+                    <td class="align-middle">{{ customer.address }}</td>
+                    <td class="align-middle">{{ customer.city }}</td>
+                    <td class="align-middle">{{ customer.ZipCode }}</td>
+                    <td class="align-middle">{{ customer.dob.format('d/m/Y')}}</td>
+                    <td class="align-middle">{{ customer.roles|join (' + ')|lower }}</td>
                     </td>
-                </tr> 
-                         
+                    <td>
+                        <a href="{{ path('admin_user_update', {'id':customer.id}) }}"><i class="fas fa-user-edit"></i></a>
+                        <a href="{{ path('admin_user_delete', {'id':customer.id}) }}"><i data-toggle="modal" data-target="#exampleModal"class="fas fa-trash"></i></a>
+                     </td>
+                </tr>
             {% endfor %}
         </tbody>
     </table>
+</div>
 
-    
-   
-
- 
+ {% block javascripts %}  
+        <script type="text/javascript" src={{ asset('script/script.js')}}> 
+        </script>
+ {% endblock %}
 
 {% endblock %}

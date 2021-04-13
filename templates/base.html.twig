@@ -8,38 +8,34 @@
         <meta name="description" content="Site E-commerce">
         <title> Freebird {% block title %} {% endblock %}</title> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <link rel="icon" type="image/png" href="images/favicon.png"/>
         <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         
         {% block stylesheets %}
         
         {% endblock %}
-
     </head>
+
     <body>
         <header class="container-fluid">
     
             <div class="row">
                     <div class="col-12 text-right" id="id-nav-bar">
                         {% if app.user %}
-                            <span class="login-message">Bonjour {{ app.user.FirstName|upper}}</span>
-                            <a href="{{ path('client')}}" > <i class="fas fa-user" id="id-user"> </i></a>
+                            <span class="login-message">Bonjour {{ app.user.LastName|upper}}</span>
+                            <a href="{{ path('compte')}}" > <i class="fas fa-user" id="id-user"> </i></a>
                         {% else %}
-                             <a href="{{ path('app_login')}}" > <i class="fas fa-user" id="id-user"> </i></a>
+                             <a href="{{ path('app_login') }}" > <i class="fas fa-user" id="id-user"></i></a>
                         {% endif %}
-                        
 
+ 
                         <a href="{{ path('cart_index') }}"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
                         <input type="search" name="recherche" id="id-input" placeholder="recherche" class="text-center ">
                         <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
                     </div>
                     <br>
-
-                    
+                   
                     <div class="col-4 ">
                             <img class="logo text-center" src="{{ asset('images/logo/logo.png') }}" alt="logo freebird">
                     </div> 
@@ -104,7 +100,7 @@
                            </div>
                             
                                 <div class="col-12 text-center">
-                                    <p> <a href="{{ path( 'mentions-legales')}}"> Mentions légales-</a> <a href="{{ path( 'cgv')}}">CGV- </a> <a href="{{ path( 'cgu')}}">CGU</a> <a href="{{ path( 'politique-de-confidentialite')}}">- Politique de confidentialités </a></p>
+                                    <p> <a href="{{ path( 'mentions-legales')}}"> Mentions légales-</a> <a href="{{ path( 'cgv')}}">CGV- </a> <a href="{{ path( 'cgu')}}">CGU</a> <a href="{{ path( 'politique-de-confidentialite')}}">- Politique de confidentialité </a></p>
                                     <p>Copyright © 2021-Freebird</p>
                                 </div>
                         </div>
@@ -117,7 +113,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
         <script src="https://kit.fontawesome.com/c28c69092d.js" crossorigin="anonymous"></script>
-        <script>
+        <script type="text/javascript" src="{{ asset('script/script.js')}}"></script>
+        <script> 
         $(document).ready(function(){
             bsCustomFileInput.init()
         })

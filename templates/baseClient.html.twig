@@ -7,7 +7,7 @@
        <title>FreeBird {% block title %}{% endblock %}</title>
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-       <link rel="stylesheet" href="{{ asset('css/styleClient.css') }}">
+       <link rel="stylesheet" href="{{ asset('css/styleCompte.css') }}">
        {% block stylesheets %}{% endblock %}
       
    </head>
@@ -42,24 +42,28 @@
                     </div>        
             </div>
         </header>
-        <main class="container-fluid">            
+          
+         
+       <main>
+                   
             <div class="row">
                 <nav class="col-2" id="2second-nav">
                     <ul>
-                       <li><a href="{{ path('admin_users')}}"><i class="fas fa-user-circle"></i>Profil</a></li>
+                       <li><a href="{{ path('compte')}}"><i class="fas fa-user-circle"></i>Profil</a></li>
+                       <li><a href="{{ path('compte_infos_personnelles')}}"><i class="fas fa-user-circle"></i>Informations personnelles</a></li>
+
                        <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
-                <div class="col-10 p-5">
+        {% block body %}{% endblock %} 
 
-                    
-                   {% block body %}{% endblock %} 
-                </div>
-            </div>           
             
-        </main>    
-       
+            </div>           
+    
+
+
+       </main>
       
 
         <footer>

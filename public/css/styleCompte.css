@@ -99,6 +99,8 @@ nav ul li a:hover{
 i{
  margin-right:10px;
 }
+/* ****************************************************** profilFom page ************************************************* */
+
 /* *************************************************** page profil ****************************************************** */
 .profile .table-properties th {
     font-weight: normal;
@@ -115,9 +117,14 @@ i{
     border-top: none !important;
   }
   
-  .profile .img-lg {
-    width: 9rem;
-    height: 9rem;
+   .img-lg {
+    width: 200px;
+    height: 200px;
+    
+
+  }
+  #img-profil{
+    box-shadow: rgba(0, 0, 0, 0.466);
   }
   
 
