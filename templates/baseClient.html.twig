@@ -14,34 +14,75 @@
 
    <body>
        
-    </head>
-    <body>
-        <header class="container-fluid">
-    
-            <div class="row">
-                    <div class="col-12 text-right  " id="id-nav-bar">
-                        <a href="/admin" > <i class="fas fa-user" id="id-user"> </i></a>
-                        <a href="/cart"> <i class="fas fa-shopping-cart" id="id-panier"></i></a>
-                        <input type="search" name="recherche" id="id-input" placeholder="recherce" class="text-center ">
-                        <a href="#" type="submit" id="id-recherche"><i class="fas fa-search" ></i></a>
-                    </div>
-                    <br>
+    <header class="container-fluid">
 
+        <section class="header-top">
+
+           <div class="logo">
+               <a href="{{ path('home')}}">
+              <img src="{{ asset('images/logo/logo.png') }}" alt="Logo du site FreeBird">  
+              </a>
+           </div>
+            
+           <div class="search-bar">
+                <div>
+                    <form action="https://www.google.com/search">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="query" placeholder="Recherche" aria-label="bar-de-recherche">
+                       
+                        <div class="input-group-append">
+                            
+                               <span class="input-group-text">  <button> <a href=""><i class="fas fa-search"></a></i></button></span>
+                        </div>
+                    </div>
+                </form>
+                </div>
+           </div>
+
+            <div class="icons">
+                
+                {% if app.user %}
+                   <span class="login-message">Bonjour {{ app.user.FirstName|upper}}</span>
+               {% endif %}  
+                <a href="#" id="dropdownMenuButton" ><i class="fas fa-user"></i></a> 
+                <a href="{{ path('cart_index') }}"><i class="fas fa-cart-arrow-down"></i></a> 
+                
+
+                <div class="dropdown" id="dropdown-menu"aria-labelledby="dropdownMenuButton">  
+                    <div class="close">+</div> 
+                    {% if app.user %}
+                        <a class="dropdown-item" href="{{ path('client')}}">Votre compte</a>
+                        
+                    {% else %}                       
+                        <a class="dropdown-item" href="{{ path('app_login')}}">Votre compte</a>
+                        <a class="dropdown-item" href="{{ path('app_register')}}">Inscription</a> 
+                    {% endif %}
                     
-                    <div class="col-4 ">
-                            <img class="logo text-center" src="{{asset('images/logo/logo.png')}}" alt="logo freebird">
+                    {% if is_granted ('ROLE_SUPER_ADMIN') or is_granted ('ROLE_ADMIN')  %}
+                       <a class="dropdown-item" href="{{ path('admin')}}">Espace administrateur</a> 
+                    {% endif %}
+                    <!-- <a class="dropdown-item" href="#">Connexion</a> -->
+                    
+                    {% if app.user %}
+                      <a class="dropdown-item" href="{{ path('app_logout')}}">Déconnexion</a>
                     </div> 
-                    <div class="col-8 text-right " >
-                        <nav class="nav-header " >
-                            <a href="/">Accueil</a>
-                            <a href="/discovery">Découverte</a>
-                            <a href="/shop">Boutique</a>
-                            <a href="/about">A propos</a>
-                            <a href="/contact">Contact</a>
-                        </nav>
-                    </div>        
+                    {% endif %}
+                </div>
+                
             </div>
-        </header>
+
+        </section>
+
+        <section class="header-buttom">
+                        
+           <div> <a href="{{ path('home') }}">Accueil</a></div>
+           <div><a href="{{ path('discovery') }} ">Découverte</a></div>
+           <div><a href="{{ path('shop') }}" >Boutique</a></div>
+           <div><a href="{{ path('about') }}">A propos</a></div>
+           <div><a href="{{ path('contact')}}">Contact</a></div>
+        </section>
+    </header>
+
           
          
        <main>
@@ -49,10 +90,9 @@
             <div class="row">
                 <nav class="col-2" id="2second-nav">
                     <ul>
-                       <li><a href="{{ path('compte')}}"><i class="fas fa-user-circle"></i>Profil</a></li>
                        <li><a href="{{ path('compte_infos_personnelles')}}"><i class="fas fa-user-circle"></i>Informations personnelles</a></li>
 
-                       <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
+                       <li><a href="#"> <i class="fas fa-cube"></i>Commandes</a></li>
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
@@ -80,6 +120,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js "></script>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+        <script type="text/javascript" src="{{ asset('script/script.js')}}"></script>
         <script>
             $(document).ready(function(){
             bsCustomFileInput.init()
