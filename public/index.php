@@ -9,7 +9,7 @@ require dirname(__DIR__).'/vendor/autoload.php';
 
 //
 
-if (!class_exists(Dotenv::class)) {
+if ($_SERVER['APP_ENV']) {
 
 } else {
     (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
