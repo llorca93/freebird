@@ -24,7 +24,7 @@
                     <div class="col-12 text-right" id="id-nav-bar">
                         {% if app.user %}
                             <span class="login-message">Bonjour {{ app.user.LastName|upper}}</span>
-                            <a href="{{ path('compte')}}" > <i class="fas fa-user" id="id-user"> </i></a>
+                            <a href="{{ path('client')}}" > <i class="fas fa-user" id="id-user"> </i></a>
                         {% else %}
                              <a href="{{ path('app_login') }}" > <i class="fas fa-user" id="id-user"></i></a>
                         {% endif %}
