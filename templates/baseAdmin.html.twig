@@ -18,12 +18,21 @@
             <a class="col-2"  href="/">
                 <img src="{{ asset('images/logo/logo.png')}}" alt="">
             </a>
-            <h2 class="col-10 text-center">Espace administrateur du site FreeBird </h2></div>
+            <h1 class="col-10 text-center" id="title">Espace administrateur du site FreeBird </h1></div>
+
+            <section class="header-buttom">
+                            
+                <div> <a href="{{ path('home') }}">Accueil</a></div>
+                <div><a href="{{ path('discovery') }} ">Découverte</a></div>
+                <div><a href="{{ path('shop') }}" >Boutique</a></div>
+                <div><a href="{{ path('about') }}">A propos</a></div>
+                <div><a href="{{ path('contact')}}">Contact</a></div>
+             </section>
         </header>
 
         <main class="container-fluid">            
             <div class="row">
-                <nav class="col-2">
+                <nav class="col-xs-5 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                     <ul>
                        <li ><a href="{{ path('admin')}}"><i class="fas fa-laptop"></i>Accueil</a></li>
 
@@ -40,14 +49,14 @@
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
-                <div class="col-10 p-5">
-                    <div class="col-11 p-5">
+                <div class="col-xs-5 col-sm-8 col-md-9 col-lg-9 col-xl-10 p-3">
+                    <div class="col-11 p-3">
                         {% for label, messages in app.flashes %}
                           {% for message in messages %}
-                          <div class="flash-{{ label }} bg-{{ label }} text-light p3 mb-3 rounded">{{message}}</div>
+                             <div class="flash-{{ label }} bg-{{ label }} text-light p3 mb-3 rounded">{{message}}</div>
                           {% endfor %}
                         {% endfor %}
-                      </div>
+                    </div>
                    {% block body %}{% endblock %} 
                 </div>
             </div>           
