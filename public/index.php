@@ -12,7 +12,7 @@ require dirname(__DIR__).'/vendor/autoload.php';
 if (!class_exists(Dotenv::class)) {
 
 } else {
-    (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
+    //(new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
 }
 
 if ($_SERVER['APP_DEBUG']) {
