@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title%} Utilisateur  formulaire {% endblock %}
+
+{% block body %}
+   
+    <h1 class="text-center" id="id-h1-form"> Formulaire - de données personnelles </h1>
+   
+    <div class="container-fluid " id="id-main-page-contact">
+    {{ form_start(profilForm) }}
+    
+        <div class="row">
+           
+            <div class="col-2 offset-2 mb-3 text-secondary " >
+                {{  form_label(profilForm.gender) }}
+                {{ form_widget(profilForm.gender) }}
+               
+            </div>
+
+            <div class="col-2 mb-3 text-secondary" >
+                {{ form_label(profilForm.last_name) }}
+                {{ form_widget(profilForm.last_name) }}
+            </div>
+
+            <div class="col-2 mb-3 text-secondary" >
+                {{ form_label(profilForm.first_name) }}
+                {{ form_widget(profilForm.first_name) }}
+            </div>
+
+
+            <div class="col-8 offset-2 mb-3 text-secondary">
+                {{ form_label(profilForm.email) }}
+                {{ form_widget(profilForm.email) }}
+            </div>
+
+            <div class="col-8 offset-2 mb-3 text-secondary">
+                {{ form_label(profilForm.address) }}
+                {{ form_widget(profilForm.address) }}
+            </div>
+
+            <div class="col-8 offset-2 mb-3 text-secondary">
+                {{ form_label(profilForm.city) }}
+                {{ form_widget(profilForm.city) }}
+            </div>
+
+            <div class="col-8 offset-2 mb-3 text-secondary">
+                {{ form_label(profilForm.zip_code) }}
+                {{ form_widget(profilForm.zip_code) }}
+            </div>
+            <div class="col-8 offset-2 mb-3 text-secondary">
+                {{ form_label(profilForm.dob) }}
+                {{ form_widget(profilForm.dob) }}
+            </div>
+            <br>
+            <div class="col-8 offset-2 text-center mb-3  " >
+                {{ form_widget(profilForm.valider) }}
+            </div>
+            <div class="text-center mb-3">
+                <a href="{{ path('compte_infos_personnelles')}}" class="btn btn-secondary"> Annuler </a>
+              </div>
+
+        </div>
+
+    {{ form_end(profilForm) }}
+    
+    </div>
+
+  
+   
+
+{% endblock %}

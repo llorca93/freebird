@@ -28,4 +28,9 @@ final class Version20210402103325 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE product ADD category INT NOT NULL');
     }
+
+    public function isTransactional(): bool
+{
+    return false;
+}
 }
