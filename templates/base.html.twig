@@ -8,7 +8,7 @@
         <meta name="description" content="Site E-commerce">
         <title> Freebird {% block title %} {% endblock %}</title> 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="icon" type="image/png" href="images/favicon.png"/>
+        <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png')}}"/>
         <link rel="stylesheet" href="{{ asset( "css/style.css") }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         
@@ -79,11 +79,21 @@
 
             <section class="header-buttom">
                             
-               <div> <a href="{{ path('home') }}">Accueil</a></div>
-               <div><a href="{{ path('discovery') }} ">Découverte</a></div>
-               <div><a href="{{ path('shop') }}" >Boutique</a></div>
-               <div><a href="{{ path('about') }}">A propos</a></div>
-               <div><a href="{{ path('contact')}}">Contact</a></div>
+               <div> 
+                   <a href="{{ path('home') }}" class="{% if app.request.attributes.get('_route') == 'home' %} active{% endif %}">Accueil</a>
+                </div>
+               <div>
+                   <a href="{{ path('discovery') }}"  class="{% if app.request.attributes.get('_route') == 'discovery' %} active{% endif %}">Découverte</a>
+                </div>
+               <div>
+                   <a href="{{ path('shop') }}"  class="{% if app.request.attributes.get('_route') == 'shop' %} active{% endif %}" >Boutique</a>
+                </div>
+               <div>
+                   <a href="{{ path('about') }}"  class="{% if app.request.attributes.get('_route') == 'about' %} active{% endif %}">A propos</a>
+                </div>
+               <div>
+                   <a href="{{ path('contact')}}"  class="{% if app.request.attributes.get('_route') == 'contact' %} active{% endif %}">Contact</a>
+                </div>
             </section>
         </header>
 

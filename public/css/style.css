@@ -196,6 +196,10 @@ header{
     height: 25px;
 } */
 
+.icons span{
+    font-weight: 500;
+    margin-right: 5px; 
+}
 span a
 {
     color: black;
@@ -250,6 +254,10 @@ span button
     font-weight: 500;
 }
 
+a.active{
+    color:#1bd7ef;;
+    font-weight: 500;
+}
 
 
 

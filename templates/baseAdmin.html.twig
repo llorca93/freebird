@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+   <html lang=fr>
    <head>
        <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scaler=1.0">
-       <meta name="author" content="Djibril, Pierre, Sabrina, Alexandre">
-       <meta name="description" content="Site E-commerce">
+       <meta name="viewport" content="width=device-width, initial-scaler=1.0"/>
+       <meta name="author" content="Djibril, Pierre, Sabrina, Alexandre"/>
+       <meta name="description" content="Site E-commerce"/>
        <title>FreeBird {% block title %}{% endblock %}</title>
+       <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png')}}"/>
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-       <link rel="stylesheet" href="{{ asset('css/styleAdmin.css') }}">
-       {% block stylesheets %}{% endblock %}
-      
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">       
+       <link rel="stylesheet" href="{{ asset('css/styleAdmin.css') }}"/>
+       {% block stylesheets %}{% endblock %}      
    </head>
 
    <body>
@@ -18,36 +19,55 @@
             <a class="col-2"  href="/">
                 <img src="{{ asset('images/logo/logo.png')}}" alt="">
             </a>
-            <h2 class="col-10 text-center">Espace administrateur du site FreeBird </h2></div>
+            <h1 class="col-10 text-center" id="title">Espace administrateur du site FreeBird </h1></div>
+
+            <section class="header-buttom">
+                            
+               <div><a href="{{ path('home') }}">Accueil</a></div>
+               <div><a href="{{ path('discovery') }}">Découverte</a></div>
+               <div><a href="{{ path('shop') }}">Boutique</a> </div>
+               <div>   <a href="{{ path('about') }}">A propos</a></div>
+               <div><a href="{{ path('contact')}}">Contact</a></div>
+             </section>
         </header>
 
         <main class="container-fluid">            
             <div class="row">
-                <nav class="col-2">
+                <nav class="col-xs-5 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                     <ul>
-                       <li ><a href="{{ path('admin')}}"><i class="fas fa-laptop"></i>Accueil</a></li>
+                       <li >
+                           <a href="{{ path('admin')}}"  class="{% if app.request.attributes.get('_route') == 'admin' %} active{% endif %}"><i class="fas fa-laptop"></i>Accueil</a>
+                        </li>
 
-                       <li> <a href="{{ path('admin_product')}}"><i class="fas fa-tag"></i>Produits</a></li>
+                       <li> 
+                           <a href="{{ path('admin_product')}}"  class="{% if app.request.attributes.get('_route') == 'admin_product' %} active{% endif %}"><i class="fas fa-tag"></i>Produits</a>
+                        </li>
 
                        {% if is_granted ('ROLE_SUPER_ADMIN') %}
-                           <li><a href="{{ path('admin_users')}}"><i class="fas fa-users"></i>Clients</a></li>
+                           <li>
+                               <a href="{{ path('admin_users')}}"  class="{% if app.request.attributes.get('_route') == 'admin_users' %} active{% endif %}"><i class="fas fa-users"></i>Clients</a>
+                            </li>
                         {% endif %}
 
-                       <li><a href="{{ path('admin_orders') }}"> <i class="fas fa-cube"></i>Commandes</a></li>
+                       <li>
+                           <a href="{{ path('admin_orders') }}"  class="{% if app.request.attributes.get('_route') == 'admin_orders' %} active{% endif %}"> <i class="fas fa-cube"></i>Commandes</a>
+                        </li>
                        
-                       <li><a href="{{ path('admin_categories') }}"> <i class="fas fa-list"></i>Categories</a></li>
+                       <li>
+                           <a href="{{ path('admin_categories') }}"  class="{% if app.request.attributes.get('_route') == 'admin_categories' %} active{% endif %}"> <i class="fas fa-list"></i>Categories</a>
+                        </li>
 
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
                     </ul>
                 </nav>
-                <div class="col-10 p-5">
-                    <div class="col-11 p-5">
+                <div class="col-xs-5 col-sm-8 col-md-9 col-lg-9 col-xl-10 p-3">
+                    <div class="col-11 p-3">
                         {% for label, messages in app.flashes %}
                           {% for message in messages %}
-                          <div class="flash-{{ label }} bg-{{ label }} text-light p3 mb-3 rounded">{{message}}</div>
+                             <div class="flash-{{ label }} bg-{{ label }} text-light p3 mb-3 rounded">{{message}}</div>
                           {% endfor %}
                         {% endfor %}
-                      </div>
+                    </div>
                    {% block body %}{% endblock %} 
                 </div>
             </div>           
@@ -82,3 +102,4 @@
 
         {% block javascripts %}   {% endblock %}
    </body>
+   </html>

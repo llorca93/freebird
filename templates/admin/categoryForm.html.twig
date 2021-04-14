@@ -4,15 +4,18 @@
 
 {% block body %} 
 
-    <h1>Formulaire - catégories</h1>
+    <h2>Formulaire - catégories</h2>
 
     <div class="py-5">
     {{ form_start(categoryForm) }}
     {{ form_end(categoryForm) }}
     </div>
-
+<div class="d-flex justify-content-between"> 
+    <div class="text-center pb-5">
+      <a href="{{ path('admin_categories') }}" class="btn btn-primary">Valider</a>
+    </div>
     <div class="text-center pb-5">
       <a href="{{ path('admin_categories') }}" class="btn btn-danger">Annuler</a>
     </div>
-
+</div>
 {% endblock %}

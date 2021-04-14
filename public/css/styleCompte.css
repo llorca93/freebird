@@ -67,7 +67,7 @@ header{
   /* #id-input{
       height: 25px;
   } */
-  
+
   span a
   {
       color: black;
@@ -77,6 +77,11 @@ header{
   {
       border: none;
   }
+
+  .icons span{
+    font-weight: 500;
+    margin-right: 5px; 
+}
   
   .header-top .icons{
     width: 30%;
@@ -320,6 +325,13 @@ i{
         
     }
 }
+
+a.active{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+/* ****************************************************** profilFom page ************************************************* */
 
 /* *************************************************** page profil ****************************************************** */
 .profile .table-properties th {

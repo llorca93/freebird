@@ -5,6 +5,7 @@
        <meta name="author" content="Djibril, Pierre, Sabrina, Alexandre">
        <meta name="description" content="Site E-commerce">
        <title>FreeBird {% block title %}{% endblock %}</title>
+       <link rel="icon" type="image/png" href="{{ asset('images/logo/logo.png')}}"/>
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
        <link rel="stylesheet" href="{{ asset('css/styleCompte.css') }}">
@@ -90,7 +91,7 @@
             <div class="row" id="id-container-client">
                 <nav class="col-2" id="2second-nav">
                     <ul>
-                       <li><a href="{{ path('compte_infos_personnelles')}}"><i class="fas fa-user-circle"></i>Informations personnelles</a></li>
+                       <li><a href="{{ path('compte_infos_personnelles')}}" class="{% if app.request.attributes.get('_route') == 'compte_infos_personnelles' %} active{% endif %}"><i class="fas fa-user-circle"></i>Informations personnelles</a></li>
 
                        <li><a href="#"> <i class="fas fa-cube"></i>Commandes</a></li>
                        <li><a href="{{ path('app_logout')}}"><i class="fas fa-running"></i>Déconnexion</a></li>
