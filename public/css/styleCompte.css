@@ -261,7 +261,65 @@ nav ul li a:hover{
 i{
  margin-right:10px;
 }
-/* ****************************************************** profilFom page ************************************************* */
+/* ******************************************************responsive baseClient nave  ************************************************** */
+@media screen and (min-width: 304px) and (max-width: 944px){
+    nav {
+        flex: none !important;
+        height: auto; 
+         
+    }
+
+
+
+    #titre-page-baseclient> h1{
+        font-size: 25px;
+        
+        margin-left: 15px;
+        
+    }
+    
+    #titre-page-baseclient> h6{
+    
+    
+        margin-right: 15px;
+        
+    }
+
+
+}
+@media screen and (min-width: 150px) and (max-width: 304px){
+    nav {
+        flex: none !important;
+    
+        height: auto; 
+        
+         
+    }
+
+
+    #titre-page-baseclient> h1{
+        font-size: 25px;
+        
+    }
+    #titre-page-baseclient> h6{
+    
+        text-align: center !important;
+        margin-right: 15px;
+        
+    }
+    
+
+}
+
+
+/* ****************************************************** responsive-profilFom page ************************************************* */
+@media screen and (min-width: 304px) and (max-width: 944px){
+    #id-mes-titres-profil>h1{
+        font-weight: bold;
+
+        
+    }
+}
 
 /* *************************************************** page profil ****************************************************** */
 .profile .table-properties th {
