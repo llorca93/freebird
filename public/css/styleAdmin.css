@@ -208,3 +208,10 @@ thead tr{
 }
 
 
+a.active{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    background-color: var(--color-grey);
+}
+
